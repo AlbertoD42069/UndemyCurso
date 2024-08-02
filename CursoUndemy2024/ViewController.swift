@@ -30,7 +30,7 @@ class ViewController: UITabBarController {
         vcControlNav.tabBarItem  = UITabBarItem(title: "Controles", image: vcImage, tag: 1)
         vcVistasNav.tabBarItem = UITabBarItem(title: "Vistas", image: vcVistaImagen, tag: 2)
         
-        let items = [vcControlNav, vcVistasNav]
+        let items = [vcVistasNav, vcControlNav]
         
         for nav in items {
             tabBar.barTintColor = .darkGray
