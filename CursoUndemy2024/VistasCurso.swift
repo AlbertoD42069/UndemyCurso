@@ -15,37 +15,98 @@ class VistasCurso: UIView {
         view.backgroundColor = .white
         return view
     }()
+    private let lineaDivision : UIView = {
+        let view : UIView = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .black
+        return view
+    }()
     private let imagen : UIImageView = {
         let img : UIImageView = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
         img.backgroundColor = .systemTeal
+        img.image = UIImage(named: "random.svg")
         return img
+    }()
+    private let labelText : UILabel = {
+        let label : UILabel = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Hola Mundo"
+        return label
+    }()
+    private let button : UIButton = {
+        let btn : UIButton = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.backgroundColor = .systemBlue
+        btn.layer.cornerRadius = 8
+        btn.setTitle("Presionar", for: .normal)
+        return btn
+    }()
+    private let stackView : UIStackView = {
+        let stack : UIStackView = UIStackView()
+        stack.axis = .horizontal
+        stack.distribution = .fillEqually
+        return stack
     }()
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubview(vista)
-        addSubview(imagen)
-        NSLayoutConstraint.activate([
-            vista.safeAreaLayoutGuide.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 5),
-            vista.safeAreaLayoutGuide.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 5),
-            vista.safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -5),
-            vista.heightAnchor.constraint(equalToConstant: 150),
-            
-            imagen.topAnchor.constraint(equalTo: vista.bottomAnchor, constant: 5),
-            imagen.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
-            imagen.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -5),
-            imagen.heightAnchor.constraint(equalToConstant: 150),
-            
-
-        ])
+        addViews()
+        setAutoLayout()
+        setupViewCustom()
+        setupViewAutoLayout()
+        
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
-    
+    func addViews(){
+        addSubview(stackView)
+        stackView.addSubview(vista)
+        stackView.addSubview(lineaDivision)
+        stackView.addSubview(imagen)
+    }
+    func setAutoLayout(){
+        NSLayoutConstraint.activate([
+            
+            stackView.safeAreaLayoutGuide.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            stackView.safeAreaLayoutGuide.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
+            stackView.safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
+            stackView.heightAnchor.constraint(equalToConstant: 150),
+            
+            
+            vista.safeAreaLayoutGuide.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 5),
+            vista.safeAreaLayoutGuide.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 5),
+            vista.safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -5),
+            vista.heightAnchor.constraint(equalToConstant: 150),
+            
+            lineaDivision.topAnchor.constraint(equalTo: vista.bottomAnchor, constant: 10),
+            lineaDivision.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
+            lineaDivision.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
+            lineaDivision.heightAnchor.constraint(equalToConstant: 1),
+            
+            imagen.topAnchor.constraint(equalTo: lineaDivision.bottomAnchor, constant: 10),
+            imagen.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
+            imagen.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
+            imagen.heightAnchor.constraint(equalToConstant: 150),
+        ])
+    }
+    func setupViewCustom(){
+        vista.addSubview(labelText)
+        vista.addSubview(button)
+    }
+    func setupViewAutoLayout(){
+        NSLayoutConstraint.activate([
+            labelText.topAnchor.constraint(equalTo: vista.topAnchor, constant: 5),
+            labelText.trailingAnchor.constraint(equalTo: vista.trailingAnchor, constant: -5),
+            labelText.leadingAnchor.constraint(equalTo: vista.leadingAnchor, constant: 5),
+            
+            button.topAnchor.constraint(equalTo: labelText.bottomAnchor, constant: 5),
+            button.trailingAnchor.constraint(equalTo: vista.trailingAnchor, constant: -5),
+            button.leadingAnchor.constraint(equalTo: vista.leadingAnchor, constant: 5),
+
+        ])
+    }
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
