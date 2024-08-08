@@ -44,8 +44,9 @@ class VistasCurso: UIView {
     }()
     private let stackView : UIStackView = {
         let stack : UIStackView = UIStackView()
-        stack.axis = .horizontal
-        stack.distribution = .fillEqually
+        stack.axis = .vertical
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.distribution = .fillEqually        
         return stack
     }()
     override init(frame: CGRect) {
@@ -62,34 +63,38 @@ class VistasCurso: UIView {
     }
     func addViews(){
         addSubview(stackView)
-        stackView.addSubview(vista)
-        stackView.addSubview(lineaDivision)
-        stackView.addSubview(imagen)
+        //stackView.addSubview(vista)
+        //stackView.addSubview(lineaDivision)
+        //stackView.addSubview(imagen)
+        stackView.addArrangedSubview(vista)
+        stackView.addArrangedSubview(lineaDivision)
+        stackView.addArrangedSubview(imagen)
+
     }
     func setAutoLayout(){
         NSLayoutConstraint.activate([
             
-            stackView.safeAreaLayoutGuide.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-            stackView.safeAreaLayoutGuide.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
-            stackView.safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
-            stackView.heightAnchor.constraint(equalToConstant: 150),
-            
-            
-            vista.safeAreaLayoutGuide.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 5),
-            vista.safeAreaLayoutGuide.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 5),
-            vista.safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -5),
+            stackView.safeAreaLayoutGuide.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            stackView.safeAreaLayoutGuide.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            stackView.safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            stackView.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+
+            vista.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 5),
+            vista.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 5),
+            vista.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -5),
             vista.heightAnchor.constraint(equalToConstant: 150),
             
             lineaDivision.topAnchor.constraint(equalTo: vista.bottomAnchor, constant: 10),
-            lineaDivision.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
-            lineaDivision.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
+            lineaDivision.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -5),
+            lineaDivision.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 5),
             lineaDivision.heightAnchor.constraint(equalToConstant: 1),
             
             imagen.topAnchor.constraint(equalTo: lineaDivision.bottomAnchor, constant: 10),
-            imagen.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
-            imagen.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
+            imagen.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -5),
+            imagen.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 5),
             imagen.heightAnchor.constraint(equalToConstant: 150),
         ])
+        
     }
     func setupViewCustom(){
         vista.addSubview(labelText)
