@@ -15,6 +15,7 @@
 		B3B4234F2C5CA09C00AA0723 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3B4234D2C5CA09C00AA0723 /* LaunchScreen.storyboard */; };
 		B3CFB4682C65999D0020ECCD /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CFB4672C65999D0020ECCD /* ScrollViewController.swift */; };
 		B3CFB46A2C6713970020ECCD /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CFB4692C6713970020ECCD /* WebViewController.swift */; };
+		B3CFB46C2C68122B0020ECCD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CFB46B2C68122B0020ECCD /* MapViewController.swift */; };
 		B3DE286D2C5D9D6B00F9BE12 /* VistasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE286C2C5D9D6B00F9BE12 /* VistasViewController.swift */; };
 		B3DE286F2C5DA13500F9BE12 /* ControlsAndViewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE286E2C5DA13500F9BE12 /* ControlsAndViewsViewController.swift */; };
 		B3DE28712C5DA17A00F9BE12 /* ViewHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE28702C5DA17A00F9BE12 /* ViewHome.swift */; };
@@ -32,6 +33,7 @@
 		B3B423502C5CA09C00AA0723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3CFB4672C65999D0020ECCD /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		B3CFB4692C6713970020ECCD /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		B3CFB46B2C68122B0020ECCD /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B3DE286C2C5D9D6B00F9BE12 /* VistasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistasViewController.swift; sourceTree = "<group>"; };
 		B3DE286E2C5DA13500F9BE12 /* ControlsAndViewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsAndViewsViewController.swift; sourceTree = "<group>"; };
 		B3DE28702C5DA17A00F9BE12 /* ViewHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHome.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				B3DE28722C5DA18F00F9BE12 /* VistasCurso.swift */,
 				B3CFB4672C65999D0020ECCD /* ScrollViewController.swift */,
 				B3CFB4692C6713970020ECCD /* WebViewController.swift */,
+				B3CFB46B2C68122B0020ECCD /* MapViewController.swift */,
 			);
 			path = CursoUndemy2024;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				B3B423472C5CA09A00AA0723 /* ViewController.swift in Sources */,
 				B3CFB46A2C6713970020ECCD /* WebViewController.swift in Sources */,
 				B3B423432C5CA09A00AA0723 /* AppDelegate.swift in Sources */,
+				B3CFB46C2C68122B0020ECCD /* MapViewController.swift in Sources */,
 				B3DE286F2C5DA13500F9BE12 /* ControlsAndViewsViewController.swift in Sources */,
 				B3CFB4682C65999D0020ECCD /* ScrollViewController.swift in Sources */,
 				B3B423452C5CA09A00AA0723 /* SceneDelegate.swift in Sources */,
