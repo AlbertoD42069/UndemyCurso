@@ -12,6 +12,7 @@ class ViewController: UITabBarController {
     let vcControlsAndViews = ControlsAndViewsViewController()
     let vcVistasCurso = VistasViewController()
     let vcScrollView = ScrollViewController()
+    let vcWebView = WebViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,22 +21,25 @@ class ViewController: UITabBarController {
         vcControlsAndViews.navigationItem.largeTitleDisplayMode = .automatic
         vcVistasCurso.navigationItem.largeTitleDisplayMode = .automatic
         vcScrollView.navigationItem.largeTitleDisplayMode = .automatic
+        vcWebView.navigationItem.largeTitleDisplayMode = .automatic
         
         let vcControlNav = UINavigationController(rootViewController: vcControlsAndViews)
         let vcVistasNav = UINavigationController(rootViewController: vcVistasCurso)
         let vcScrollNav = UINavigationController(rootViewController: vcScrollView)
-        
-        
+        let vcWebNav = UINavigationController(rootViewController: vcWebView)
         
         let vcImage = UIImage(systemName: "menucard.fill")
         let vcVistaImagen = UIImage(systemName: "location.circle.fill")
         let vcScrollImagen = UIImage(systemName: "circle.fill")
+        let vcWebImage = UIImage(systemName: "person")
         
         vcControlNav.tabBarItem  = UITabBarItem(title: "Controles", image: vcImage, tag: 1)
         vcVistasNav.tabBarItem = UITabBarItem(title: "Vistas", image: vcVistaImagen, tag: 2)
-        vcScrollView.tabBarItem = UITabBarItem(title: "Scroll", image: vcScrollImagen, tag: 3)
+        vcScrollNav.tabBarItem = UITabBarItem(title: "Scroll", image: vcScrollImagen, tag: 3)
+        vcWebNav.tabBarItem = UITabBarItem(title: "Web", image: vcWebImage, tag: 4)
         
-        let items = [vcScrollNav, vcVistasNav, vcControlNav]
+        
+        let items = [vcWebNav, vcScrollNav, vcVistasNav, vcControlNav]
         
         for nav in items {
             tabBar.barTintColor = .darkGray
