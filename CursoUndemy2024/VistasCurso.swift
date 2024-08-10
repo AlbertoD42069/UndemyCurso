@@ -40,13 +40,14 @@ class VistasCurso: UIView {
         btn.backgroundColor = .systemBlue
         btn.layer.cornerRadius = 8
         btn.setTitle("Presionar", for: .normal)
+        btn.addTarget(self, action: (#selector(puchButton)), for: .touchUpInside)
         return btn
     }()
     private let stackView : UIStackView = {
         let stack : UIStackView = UIStackView()
         stack.axis = .vertical
         stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.distribution = .fillEqually        
+        stack.distribution = .fill
         return stack
     }()
     override init(frame: CGRect) {
@@ -69,7 +70,7 @@ class VistasCurso: UIView {
         stackView.addArrangedSubview(vista)
         stackView.addArrangedSubview(lineaDivision)
         stackView.addArrangedSubview(imagen)
-
+        
     }
     func setAutoLayout(){
         NSLayoutConstraint.activate([
@@ -78,11 +79,11 @@ class VistasCurso: UIView {
             stackView.safeAreaLayoutGuide.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             stackView.safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
             stackView.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
-
+            
             vista.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 5),
             vista.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 5),
             vista.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -5),
-            vista.heightAnchor.constraint(equalToConstant: 150),
+            vista.heightAnchor.constraint(equalToConstant: 100),
             
             lineaDivision.topAnchor.constraint(equalTo: vista.bottomAnchor, constant: 10),
             lineaDivision.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -5),
@@ -109,8 +110,11 @@ class VistasCurso: UIView {
             button.topAnchor.constraint(equalTo: labelText.bottomAnchor, constant: 5),
             button.trailingAnchor.constraint(equalTo: vista.trailingAnchor, constant: -5),
             button.leadingAnchor.constraint(equalTo: vista.leadingAnchor, constant: 5),
-
+            
         ])
+    }
+    @objc func puchButton(){
+        vista.isHidden = true
     }
     /*
     // Only override draw() if you perform custom drawing.
