@@ -11,6 +11,7 @@ class ViewController: UITabBarController {
     
     let vcControlsAndViews = ControlsAndViewsViewController()
     let vcVistasCurso = VistasViewController()
+    let vcNavController = NavegacionCursoViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,16 +22,19 @@ class ViewController: UITabBarController {
         
         let vcControlNav = UINavigationController(rootViewController: vcControlsAndViews)
         let vcVistasNav = UINavigationController(rootViewController: vcVistasCurso)
+        let vcNav = UINavigationController(rootViewController: vcNavController)
         
         
         
         let vcImage = UIImage(systemName: "menucard.fill")
         let vcVistaImagen = UIImage(systemName: "location.circle.fill")
+        let vcNavImagen = UIImage(systemName: "circle")
         
         vcControlNav.tabBarItem  = UITabBarItem(title: "Controles", image: vcImage, tag: 1)
         vcVistasNav.tabBarItem = UITabBarItem(title: "Vistas", image: vcVistaImagen, tag: 2)
+        vcNav.tabBarItem = UITabBarItem(title: "Navegacion", image: vcNavImagen, tag: 3)
         
-        let items = [vcVistasNav, vcControlNav]
+        let items = [vcNav, vcVistasNav, vcControlNav]
         
         for nav in items {
             tabBar.barTintColor = .darkGray

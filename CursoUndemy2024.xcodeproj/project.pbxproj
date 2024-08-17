@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B367E3D72C704856004370FE /* NavegacionCursoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367E3D62C704856004370FE /* NavegacionCursoViewController.swift */; };
+		B367E3D92C704F52004370FE /* NavegacionDosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367E3D82C704F52004370FE /* NavegacionDosViewController.swift */; };
 		B3B423432C5CA09A00AA0723 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B423422C5CA09A00AA0723 /* AppDelegate.swift */; };
 		B3B423452C5CA09A00AA0723 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B423442C5CA09A00AA0723 /* SceneDelegate.swift */; };
 		B3B423472C5CA09A00AA0723 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B423462C5CA09A00AA0723 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		B367E3D62C704856004370FE /* NavegacionCursoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavegacionCursoViewController.swift; sourceTree = "<group>"; };
+		B367E3D82C704F52004370FE /* NavegacionDosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavegacionDosViewController.swift; sourceTree = "<group>"; };
 		B3B4233F2C5CA09A00AA0723 /* CursoUndemy2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CursoUndemy2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3B423422C5CA09A00AA0723 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3B423442C5CA09A00AA0723 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				B3DE28702C5DA17A00F9BE12 /* ViewHome.swift */,
 				B3DE28722C5DA18F00F9BE12 /* VistasCurso.swift */,
 				B367E3D62C704856004370FE /* NavegacionCursoViewController.swift */,
+				B367E3D82C704F52004370FE /* NavegacionDosViewController.swift */,
 			);
 			path = CursoUndemy2024;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 			files = (
 				B3B423472C5CA09A00AA0723 /* ViewController.swift in Sources */,
 				B3B423432C5CA09A00AA0723 /* AppDelegate.swift in Sources */,
+				B367E3D92C704F52004370FE /* NavegacionDosViewController.swift in Sources */,
 				B3DE286F2C5DA13500F9BE12 /* ControlsAndViewsViewController.swift in Sources */,
 				B3B423452C5CA09A00AA0723 /* SceneDelegate.swift in Sources */,
 				B367E3D72C704856004370FE /* NavegacionCursoViewController.swift in Sources */,
