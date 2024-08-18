@@ -11,6 +11,7 @@ class ViewController: UITabBarController {
     
     let vcControlsAndViews = ControlsAndViewsViewController()
     let vcVistasCurso = VistasViewController()
+    let vcPalindromo = PalindromoViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,19 +19,23 @@ class ViewController: UITabBarController {
         
         vcControlsAndViews.navigationItem.largeTitleDisplayMode = .automatic
         vcVistasCurso.navigationItem.largeTitleDisplayMode = .automatic
+        vcPalindromo.navigationItem.largeTitleDisplayMode = .automatic
         
         let vcControlNav = UINavigationController(rootViewController: vcControlsAndViews)
         let vcVistasNav = UINavigationController(rootViewController: vcVistasCurso)
+        let vcPalindromoNav = UINavigationController(rootViewController: vcPalindromo)
         
         
         
         let vcImage = UIImage(systemName: "menucard.fill")
         let vcVistaImagen = UIImage(systemName: "location.circle.fill")
+        let vcImagenPalindromo = UIImage(systemName: "circle.fill")
         
         vcControlNav.tabBarItem  = UITabBarItem(title: "Controles", image: vcImage, tag: 1)
         vcVistasNav.tabBarItem = UITabBarItem(title: "Vistas", image: vcVistaImagen, tag: 2)
+        vcPalindromoNav.tabBarItem = UITabBarItem(title: "Palindormo", image: vcImagenPalindromo, tag: 3)
         
-        let items = [vcVistasNav, vcControlNav]
+        let items = [vcPalindromoNav, vcVistasNav, vcControlNav]
         
         for nav in items {
             tabBar.barTintColor = .darkGray
