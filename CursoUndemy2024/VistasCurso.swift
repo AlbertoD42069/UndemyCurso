@@ -40,6 +40,7 @@ class VistasCurso: UIView {
         btn.backgroundColor = .systemBlue
         btn.layer.cornerRadius = 8
         btn.setTitle("Presionar", for: .normal)
+        btn.addTarget(self, action: (#selector(puchButton)), for: .touchUpInside)
         return btn
     }()
     private let stackView : UIStackView = {
@@ -63,32 +64,58 @@ class VistasCurso: UIView {
     }
     func addViews(){
         addSubview(stackView)
+<<<<<<< HEAD
         stackView.addArrangedSubview(vista)
         stackView.addArrangedSubview(lineaDivision)
         stackView.addArrangedSubview(imagen)
+=======
+        //stackView.addSubview(vista)
+        //stackView.addSubview(lineaDivision)
+        //stackView.addSubview(imagen)
+        stackView.addArrangedSubview(vista)
+        stackView.addArrangedSubview(lineaDivision)
+        stackView.addArrangedSubview(imagen)
+        
+>>>>>>> VistasYcontroles
     }
     func setAutoLayout(){
         NSLayoutConstraint.activate([
             
+<<<<<<< HEAD
             stackView.safeAreaLayoutGuide.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 5),
             stackView.safeAreaLayoutGuide.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 5),
             stackView.safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -5),
             stackView.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -5),
 
             vista.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 5),
+=======
+            stackView.safeAreaLayoutGuide.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            stackView.safeAreaLayoutGuide.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            stackView.safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            stackView.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            
+            vista.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 5),
+>>>>>>> VistasYcontroles
             vista.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 5),
             vista.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -5),
             vista.heightAnchor.constraint(equalToConstant: 100),
             
             lineaDivision.topAnchor.constraint(equalTo: vista.bottomAnchor, constant: 10),
-            lineaDivision.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
-            lineaDivision.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
+            lineaDivision.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -5),
+            lineaDivision.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 5),
             lineaDivision.heightAnchor.constraint(equalToConstant: 1),
             
             imagen.topAnchor.constraint(equalTo: lineaDivision.bottomAnchor, constant: 10),
+<<<<<<< HEAD
             imagen.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
             imagen.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
+=======
+            imagen.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -5),
+            imagen.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 5),
+            imagen.heightAnchor.constraint(equalToConstant: 150),
+>>>>>>> VistasYcontroles
         ])
+        
     }
     func setupViewCustom(){
         vista.addSubview(labelText)
@@ -103,8 +130,11 @@ class VistasCurso: UIView {
             button.topAnchor.constraint(equalTo: labelText.bottomAnchor, constant: 5),
             button.trailingAnchor.constraint(equalTo: vista.trailingAnchor, constant: -5),
             button.leadingAnchor.constraint(equalTo: vista.leadingAnchor, constant: 5),
-
+            
         ])
+    }
+    @objc func puchButton(){
+        vista.isHidden = true
     }
     /*
     // Only override draw() if you perform custom drawing.
