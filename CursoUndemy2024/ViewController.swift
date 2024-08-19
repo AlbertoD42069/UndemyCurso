@@ -29,7 +29,7 @@ class ViewController: UITabBarController {
         
         let vcImage = UIImage(systemName: "menucard.fill")
         let vcVistaImagen = UIImage(systemName: "location.circle.fill")
-        let vcImagenPalindromo = UIImage(systemName: "circle.fill")
+        let vcImagenPalindromo = UIImage(systemName: "circle")
         
         vcControlNav.tabBarItem  = UITabBarItem(title: "Controles", image: vcImage, tag: 1)
         vcVistasNav.tabBarItem = UITabBarItem(title: "Vistas", image: vcVistaImagen, tag: 2)
