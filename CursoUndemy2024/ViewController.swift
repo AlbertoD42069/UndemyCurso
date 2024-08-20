@@ -16,6 +16,7 @@ class ViewController: UITabBarController {
     let vcWebView = WebViewController()
     let vcMapView = MapViewController()
     let vcPageViewController = PageViewController()
+    let vcSearch = SearchViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +59,24 @@ class ViewController: UITabBarController {
         
         let items = [vcPageNAv, vcMapNav, vcWebNav, vcScrollNav, vcVistasNav, vcControlNav, vcPalindromoNav]
 
+        vcSearch.navigationItem.largeTitleDisplayMode = .automatic
+        
+        let vcControlNav = UINavigationController(rootViewController: vcControlsAndViews)
+        let vcVistasNav = UINavigationController(rootViewController: vcVistasCurso)
+        let vcSearchNav = UINavigationController(rootViewController: vcSearch)
+        
+        
+        
+        let vcImage = UIImage(systemName: "menucard.fill")
+        let vcVistaImagen = UIImage(systemName: "location.circle.fill")
+        let vcSearchImage = UIImage(systemName: "circle.fill")
+        
+        vcControlNav.tabBarItem  = UITabBarItem(title: "Controles", image: vcImage, tag: 1)
+        vcVistasNav.tabBarItem = UITabBarItem(title: "Vistas", image: vcVistaImagen, tag: 2)
+        vcSearchNav.tabBarItem = UITabBarItem(title: "search", image: vcSearchImage, tag: 3)
+        
+        let items = [vcSearchNav, vcVistasNav, vcControlNav]
+        
         for nav in items {
             tabBar.barTintColor = .darkGray
         }
