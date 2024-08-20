@@ -27,6 +27,8 @@ class ViewController: UITabBarController {
         vcScrollView.navigationItem.largeTitleDisplayMode = .automatic
         vcWebView.navigationItem.largeTitleDisplayMode = .automatic
         vcMapView.navigationItem.largeTitleDisplayMode = .automatic
+        vcPageViewController.navigationItem.largeTitleDisplayMode = .automatic
+
         
         let vcControlNav = UINavigationController(rootViewController: vcControlsAndViews)
         let vcVistasNav = UINavigationController(rootViewController: vcVistasCurso)
@@ -34,6 +36,8 @@ class ViewController: UITabBarController {
         let vcScrollNav = UINavigationController(rootViewController: vcScrollView)
         let vcWebNav = UINavigationController(rootViewController: vcWebView)
         let vcMapNav = UINavigationController(rootViewController: vcMapView)
+        let vcPageNAv = UINavigationController(rootViewController: vcPageViewController)
+
         
         let vcImage = UIImage(systemName: "menucard.fill")
         let vcVistaImagen = UIImage(systemName: "location.circle.fill")
@@ -41,6 +45,8 @@ class ViewController: UITabBarController {
         let vcScrollImagen = UIImage(systemName: "circle.fill")
         let vcWebImage = UIImage(systemName: "person")
         let vcMapImage = UIImage(systemName: "location.fill")
+        let vcImagePAge = UIImage(systemName: "circle.fill")
+
         
         vcControlNav.tabBarItem  = UITabBarItem(title: "Controles", image: vcImage, tag: 1)
         vcVistasNav.tabBarItem = UITabBarItem(title: "Vistas", image: vcVistaImagen, tag: 2)
@@ -48,27 +54,10 @@ class ViewController: UITabBarController {
         vcWebNav.tabBarItem = UITabBarItem(title: "Web", image: vcWebImage, tag: 4)
         vcMapNav.tabBarItem = UITabBarItem(title: "Map", image: vcMapImage, tag: 5)
         vcPalindromoNav.tabBarItem = UITabBarItem(title: "Palindromo", image: vcImagenPalindromo, tag: 6)
+        vcPageNAv.tabBarItem = UITabBarItem(title: "page", image: vcImagePAge, tag: 7)
         
-        
-        let items = [vcMapNav, vcWebNav, vcScrollNav, vcVistasNav, vcControlNav, vcPalindromoNav]
-        vcPageViewController.navigationItem.largeTitleDisplayMode = .automatic
-        
-        let vcControlNav = UINavigationController(rootViewController: vcControlsAndViews)
-        let vcVistasNav = UINavigationController(rootViewController: vcVistasCurso)
-        let vcPageNAv = UINavigationController(rootViewController: vcPageViewController)
-        
-        
-        
-        let vcImage = UIImage(systemName: "menucard.fill")
-        let vcVistaImagen = UIImage(systemName: "location.circle.fill")
-        let vcImagePAge = UIImage(systemName: "circle.fill")
-        
-        vcControlNav.tabBarItem  = UITabBarItem(title: "Controles", image: vcImage, tag: 1)
-        vcVistasNav.tabBarItem = UITabBarItem(title: "Vistas", image: vcVistaImagen, tag: 2)
-        vcPageNAv.tabBarItem = UITabBarItem(title: "page", image: vcImagePAge, tag: 3)
-        
-        let items = [vcPageNAv, vcVistasNav, vcControlNav]
-        
+        let items = [vcPageNAv, vcMapNav, vcWebNav, vcScrollNav, vcVistasNav, vcControlNav, vcPalindromoNav]
+
         for nav in items {
             tabBar.barTintColor = .darkGray
         }

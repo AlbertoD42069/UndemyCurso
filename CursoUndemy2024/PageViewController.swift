@@ -9,7 +9,7 @@ import UIKit
 
 class PageViewController: UIPageViewController {
     
-
+    /*
     private var pageControllers : [UIViewController] = []
     
     private let pageControllerOne : UIViewController = UIViewController()
@@ -17,10 +17,11 @@ class PageViewController: UIPageViewController {
     
     private let pageControllerOneStoryboard = UIView()
     private let pageControllerTwoStoryboard = UIView()
-
+     */
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        /*
         pageControllers.append(pageControllerOneStoryboard)
         pageControllers.append(pageControllerTwoStoryboard)
         
@@ -28,10 +29,11 @@ class PageViewController: UIPageViewController {
         
         setViewControllers([pageControllerOneStoryboard], direction: .forward, animated: true, completion: nil)
         dataSource = self
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view.*/
     }
 
 }
+/*
 extension PageViewController: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         _ = UIPageViewController.NavigationOrientation.horizontal
@@ -55,3 +57,4 @@ extension PageViewController: UIPageViewControllerDataSource {
     
     
 }
+*/
