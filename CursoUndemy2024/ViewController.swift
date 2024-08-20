@@ -46,9 +46,10 @@ class ViewController: UITabBarController {
         vcScrollNav.tabBarItem = UITabBarItem(title: "Scroll", image: vcScrollImagen, tag: 3)
         vcWebNav.tabBarItem = UITabBarItem(title: "Web", image: vcWebImage, tag: 4)
         vcMapNav.tabBarItem = UITabBarItem(title: "Map", image: vcMapImage, tag: 5)
+        vcPalindromoNav.tabBarItem = UITabBarItem(title: "Palindromo", image: vcImagenPalindromo, tag: 6)
         
         
-        let items = [vcMapNav, vcWebNav, vcScrollNav, vcVistasNav, vcControlNav]
+        let items = [vcMapNav, vcWebNav, vcScrollNav, vcVistasNav, vcControlNav, vcPalindromoNav]
         
         for nav in items {
             tabBar.barTintColor = .darkGray
