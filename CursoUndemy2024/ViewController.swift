@@ -7,6 +7,13 @@
 
 import UIKit
 
+class ViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .blue
+    }
+}
+/*
 class ViewController: UITabBarController {
     
     let vcControlsAndViews = ControlsAndViewsViewController()
@@ -42,3 +49,4 @@ class ViewController: UITabBarController {
         setViewControllers(items, animated: true)
     }
 }
+*/

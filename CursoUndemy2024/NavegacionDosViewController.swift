@@ -8,14 +8,26 @@
 import UIKit
 
 class NavegacionDosViewController: UIViewController {
-
+    
+    private let button: UIButton = {
+        let btn : UIButton = UIButton()
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.setTitle("Hacer Push", for: .normal)
+        btn.addTarget(self, action: #selector(pushNav), for: .touchUpInside)
+        return btn
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
 
         // Do any additional setup after loading the view.
     }
-    
+    @objc func pushNav(){
+        let nav = UINavigationController()
+        let vcNav = NavegacionDosViewController()
+        nav.pushViewController(vcNav, animated: true)
+    }
 
     /*
     // MARK: - Navigation
