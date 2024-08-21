@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		B367E3D52C6DC414004370FE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367E3D42C6DC414004370FE /* SearchViewController.swift */; };
+=======
+		B367E3D72C704856004370FE /* NavegacionCursoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367E3D62C704856004370FE /* NavegacionCursoViewController.swift */; };
+		B367E3D92C704F52004370FE /* NavegacionDosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367E3D82C704F52004370FE /* NavegacionDosViewController.swift */; };
+>>>>>>> NavegacionEntrePantallasTabBarItem
 		B3B423432C5CA09A00AA0723 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B423422C5CA09A00AA0723 /* AppDelegate.swift */; };
 		B3B423452C5CA09A00AA0723 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B423442C5CA09A00AA0723 /* SceneDelegate.swift */; };
 		B3B423472C5CA09A00AA0723 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B423462C5CA09A00AA0723 /* ViewController.swift */; };
@@ -24,10 +29,17 @@
 		B3DE286F2C5DA13500F9BE12 /* ControlsAndViewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE286E2C5DA13500F9BE12 /* ControlsAndViewsViewController.swift */; };
 		B3DE28712C5DA17A00F9BE12 /* ViewHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE28702C5DA17A00F9BE12 /* ViewHome.swift */; };
 		B3DE28732C5DA18F00F9BE12 /* VistasCurso.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE28722C5DA18F00F9BE12 /* VistasCurso.swift */; };
+		B3FDE4902C758ADE008C8599 /* NavegacionTresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FDE48F2C758ADE008C8599 /* NavegacionTresViewController.swift */; };
+		B3FDE4922C758AF1008C8599 /* NavegacionCuatroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FDE4912C758AF1008C8599 /* NavegacionCuatroViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		B367E3D42C6DC414004370FE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+=======
+		B367E3D62C704856004370FE /* NavegacionCursoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavegacionCursoViewController.swift; sourceTree = "<group>"; };
+		B367E3D82C704F52004370FE /* NavegacionDosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavegacionDosViewController.swift; sourceTree = "<group>"; };
+>>>>>>> NavegacionEntrePantallasTabBarItem
 		B3B4233F2C5CA09A00AA0723 /* CursoUndemy2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CursoUndemy2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3B423422C5CA09A00AA0723 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3B423442C5CA09A00AA0723 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +58,8 @@
 		B3DE286E2C5DA13500F9BE12 /* ControlsAndViewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsAndViewsViewController.swift; sourceTree = "<group>"; };
 		B3DE28702C5DA17A00F9BE12 /* ViewHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHome.swift; sourceTree = "<group>"; };
 		B3DE28722C5DA18F00F9BE12 /* VistasCurso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistasCurso.swift; sourceTree = "<group>"; };
+		B3FDE48F2C758ADE008C8599 /* NavegacionTresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavegacionTresViewController.swift; sourceTree = "<group>"; };
+		B3FDE4912C758AF1008C8599 /* NavegacionCuatroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavegacionCuatroViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,11 +104,18 @@
 				B3DE286E2C5DA13500F9BE12 /* ControlsAndViewsViewController.swift */,
 				B3DE28702C5DA17A00F9BE12 /* ViewHome.swift */,
 				B3DE28722C5DA18F00F9BE12 /* VistasCurso.swift */,
+<<<<<<< HEAD
 				B3CFB4672C65999D0020ECCD /* ScrollViewController.swift */,
 				B3CFB4692C6713970020ECCD /* WebViewController.swift */,
 				B3CFB46B2C68122B0020ECCD /* MapViewController.swift */,
 				B3CFB46D2C69292F0020ECCD /* PageViewController.swift */,
 				B367E3D42C6DC414004370FE /* SearchViewController.swift */,
+=======
+				B367E3D62C704856004370FE /* NavegacionCursoViewController.swift */,
+				B367E3D82C704F52004370FE /* NavegacionDosViewController.swift */,
+				B3FDE48F2C758ADE008C8599 /* NavegacionTresViewController.swift */,
+				B3FDE4912C758AF1008C8599 /* NavegacionCuatroViewController.swift */,
+>>>>>>> NavegacionEntrePantallasTabBarItem
 			);
 			path = CursoUndemy2024;
 			sourceTree = "<group>";
@@ -179,16 +200,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3FDE4922C758AF1008C8599 /* NavegacionCuatroViewController.swift in Sources */,
 				B3B423472C5CA09A00AA0723 /* ViewController.swift in Sources */,
 				B3CFB46A2C6713970020ECCD /* WebViewController.swift in Sources */,
 				B3B423432C5CA09A00AA0723 /* AppDelegate.swift in Sources */,
+<<<<<<< HEAD
 				B3CFB46C2C68122B0020ECCD /* MapViewController.swift in Sources */,
 				B367E3D52C6DC414004370FE /* SearchViewController.swift in Sources */,
+=======
+				B367E3D92C704F52004370FE /* NavegacionDosViewController.swift in Sources */,
+>>>>>>> NavegacionEntrePantallasTabBarItem
 				B3DE286F2C5DA13500F9BE12 /* ControlsAndViewsViewController.swift in Sources */,
 				B3CFB4682C65999D0020ECCD /* ScrollViewController.swift in Sources */,
 				B3B423452C5CA09A00AA0723 /* SceneDelegate.swift in Sources */,
+				B367E3D72C704856004370FE /* NavegacionCursoViewController.swift in Sources */,
 				B3DE286D2C5D9D6B00F9BE12 /* VistasViewController.swift in Sources */,
+<<<<<<< HEAD
 				B3CFB4642C61ADC90020ECCD /* PalindromoViewController.swift in Sources */,
+=======
+				B3FDE4902C758ADE008C8599 /* NavegacionTresViewController.swift in Sources */,
+>>>>>>> NavegacionEntrePantallasTabBarItem
 				B3DE28712C5DA17A00F9BE12 /* ViewHome.swift in Sources */,
 				B3CFB4662C62E8950020ECCD /* PalindromoViewModel.swift in Sources */,
 				B3DE28732C5DA18F00F9BE12 /* VistasCurso.swift in Sources */,
