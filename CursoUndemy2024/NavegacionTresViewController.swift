@@ -8,7 +8,7 @@
 import UIKit
 
 class NavegacionTresViewController: UIViewController {
-
+    /*
     private let button: UIButton = {
         let btn : UIButton = UIButton(type: .system)
         btn.setTitle("blanco", for: .normal)
@@ -19,11 +19,11 @@ class NavegacionTresViewController: UIViewController {
         btn.layer.cornerRadius = 8
         return btn
     }()
-    
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
-        view.addSubview(button)
+       /* view.addSubview(button)
         title = "rojo"
 
         NSLayoutConstraint.activate([
@@ -32,13 +32,14 @@ class NavegacionTresViewController: UIViewController {
             button.widthAnchor.constraint(equalToConstant: 100),
             button.heightAnchor.constraint(equalToConstant: 50),
         ])
+        */
     }
-    @objc func pushNav(){
+   /* @objc func pushNav(){
         print("presionado")
         let vc =  NavegacionCuatroViewController()
         self.navigationController?.pushViewController(vc, animated: true)
         
         
-    }
+    }*/
 
 }
