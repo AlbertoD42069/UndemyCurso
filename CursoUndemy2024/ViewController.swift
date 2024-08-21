@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    /*
     private let button: UIButton = {
         let btn : UIButton = UIButton(type: .system)
         btn.setTitle("Verde", for: .normal)
@@ -19,18 +20,21 @@ class ViewController: UIViewController {
         btn.layer.cornerRadius = 8
         return btn
     }()
-    
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .blue
-        view.addSubview(button)
+        title = "Azul"
+        let butonLeft = UIBarButtonItem(title: "verde", style: .plain, target: self, action: #selector((pushNav)))
+        navigationItem.rightBarButtonItem = butonLeft
+        /*view.addSubview(button)
 
         NSLayoutConstraint.activate([
             button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             button.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             button.widthAnchor.constraint(equalToConstant: 100),
             button.heightAnchor.constraint(equalToConstant: 50),
-        ])
+        ])*/
     }
     @objc func pushNav(){
         print("presionado")

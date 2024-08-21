@@ -25,8 +25,9 @@ class NavegacionDosViewController: UIViewController {
         view.backgroundColor = .green
         let butonLeft = UIBarButtonItem(title: "rojo", style: .plain, target: self, action: #selector((goRojo)))
         navigationItem.rightBarButtonItem = butonLeft
-        /*view.addSubview(button)
         title = "verde"
+
+        /*view.addSubview(button)
 
         NSLayoutConstraint.activate([
             button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
