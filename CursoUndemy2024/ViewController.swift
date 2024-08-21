@@ -8,11 +8,39 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    private let button: UIButton = {
+        let btn : UIButton = UIButton(type: .system)
+        btn.setTitle("Verde", for: .normal)
+        btn.addTarget(self, action: #selector(pushNav), for: .touchUpInside)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.backgroundColor = .lightGray
+        btn.layer.borderWidth = 1
+        btn.layer.cornerRadius = 8
+        return btn
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .blue
+        view.addSubview(button)
+
+        NSLayoutConstraint.activate([
+            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            button.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            button.widthAnchor.constraint(equalToConstant: 100),
+            button.heightAnchor.constraint(equalToConstant: 50),
+        ])
+    }
+    @objc func pushNav(){
+        print("presionado")
+        let vc =  NavegacionDosViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        
     }
 }
+
 /*
 class ViewController: UITabBarController {
     

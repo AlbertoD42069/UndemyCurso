@@ -19,6 +19,8 @@
 		B3DE286F2C5DA13500F9BE12 /* ControlsAndViewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE286E2C5DA13500F9BE12 /* ControlsAndViewsViewController.swift */; };
 		B3DE28712C5DA17A00F9BE12 /* ViewHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE28702C5DA17A00F9BE12 /* ViewHome.swift */; };
 		B3DE28732C5DA18F00F9BE12 /* VistasCurso.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE28722C5DA18F00F9BE12 /* VistasCurso.swift */; };
+		B3FDE4902C758ADE008C8599 /* NavegacionTresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FDE48F2C758ADE008C8599 /* NavegacionTresViewController.swift */; };
+		B3FDE4922C758AF1008C8599 /* NavegacionCuatroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FDE4912C758AF1008C8599 /* NavegacionCuatroViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		B3DE286E2C5DA13500F9BE12 /* ControlsAndViewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsAndViewsViewController.swift; sourceTree = "<group>"; };
 		B3DE28702C5DA17A00F9BE12 /* ViewHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHome.swift; sourceTree = "<group>"; };
 		B3DE28722C5DA18F00F9BE12 /* VistasCurso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistasCurso.swift; sourceTree = "<group>"; };
+		B3FDE48F2C758ADE008C8599 /* NavegacionTresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavegacionTresViewController.swift; sourceTree = "<group>"; };
+		B3FDE4912C758AF1008C8599 /* NavegacionCuatroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavegacionCuatroViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 				B3DE28722C5DA18F00F9BE12 /* VistasCurso.swift */,
 				B367E3D62C704856004370FE /* NavegacionCursoViewController.swift */,
 				B367E3D82C704F52004370FE /* NavegacionDosViewController.swift */,
+				B3FDE48F2C758ADE008C8599 /* NavegacionTresViewController.swift */,
+				B3FDE4912C758AF1008C8599 /* NavegacionCuatroViewController.swift */,
 			);
 			path = CursoUndemy2024;
 			sourceTree = "<group>";
@@ -156,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3FDE4922C758AF1008C8599 /* NavegacionCuatroViewController.swift in Sources */,
 				B3B423472C5CA09A00AA0723 /* ViewController.swift in Sources */,
 				B3B423432C5CA09A00AA0723 /* AppDelegate.swift in Sources */,
 				B367E3D92C704F52004370FE /* NavegacionDosViewController.swift in Sources */,
@@ -163,6 +170,7 @@
 				B3B423452C5CA09A00AA0723 /* SceneDelegate.swift in Sources */,
 				B367E3D72C704856004370FE /* NavegacionCursoViewController.swift in Sources */,
 				B3DE286D2C5D9D6B00F9BE12 /* VistasViewController.swift in Sources */,
+				B3FDE4902C758ADE008C8599 /* NavegacionTresViewController.swift in Sources */,
 				B3DE28712C5DA17A00F9BE12 /* ViewHome.swift in Sources */,
 				B3DE28732C5DA18F00F9BE12 /* VistasCurso.swift in Sources */,
 			);
