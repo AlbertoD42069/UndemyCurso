@@ -9,32 +9,26 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    /*
-    private let button: UIButton = {
-        let btn : UIButton = UIButton(type: .system)
-        btn.setTitle("Verde", for: .normal)
-        btn.addTarget(self, action: #selector(pushNav), for: .touchUpInside)
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.backgroundColor = .lightGray
-        btn.layer.borderWidth = 1
-        btn.layer.cornerRadius = 8
-        return btn
+    private let viewNavegacion : ViewNavegacion = {
+        let view: ViewNavegacion = ViewNavegacion()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
-    */
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
-        title = "Azul"
-        let butonLeft = UIBarButtonItem(title: "verde", style: .plain, target: self, action: #selector((pushNav)))
-        navigationItem.rightBarButtonItem = butonLeft
-        /*view.addSubview(button)
+        title = "morado"
+        //let butonLeft = UIBarButtonItem(title: "verde", style: .plain, target: self, action: #selector((pushNav)))
+        //navigationItem.rightBarButtonItem = butonLeft
+        view.addSubview(viewNavegacion)
 
         NSLayoutConstraint.activate([
-            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            button.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            button.widthAnchor.constraint(equalToConstant: 100),
-            button.heightAnchor.constraint(equalToConstant: 50),
-        ])*/
+            viewNavegacion.topAnchor.constraint(equalTo: view.topAnchor),
+            viewNavegacion.leftAnchor.constraint(equalTo: view.leftAnchor),
+            viewNavegacion.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            viewNavegacion.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+
+        ])
     }
     @objc func pushNav(){
         print("presionado")
