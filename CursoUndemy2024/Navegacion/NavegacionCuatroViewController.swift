@@ -15,7 +15,6 @@ class NavegacionCuatroViewController: UIViewController {
         label.text = "Listo"
         return label
     }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
