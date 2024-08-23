@@ -44,6 +44,8 @@ extension ViewController: ViewNavegacionProtocol {
     
     func goAzul() {
         let vc = NavegacionCuatroViewController()
+        vc.titleLabels.text = "Blanco"
+        vc.titleLabels.textColor = .black
         self.navigationController?.present(vc, animated: true)
     }
     

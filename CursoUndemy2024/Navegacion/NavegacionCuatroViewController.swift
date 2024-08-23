@@ -9,6 +9,12 @@ import UIKit
 
 class NavegacionCuatroViewController: UIViewController {
     
+    let titleLabels: UILabel = {
+        let label : UILabel = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        return label
+    }()
     private let listoLabel: UILabel = {
         let label : UILabel = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -19,11 +25,14 @@ class NavegacionCuatroViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         view.addSubview(listoLabel)
-        title = "Blanco"
+        view.addSubview(titleLabels)
 
        NSLayoutConstraint.activate([
-            listoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            listoLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+        titleLabels.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+        titleLabels.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+
+        listoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        listoLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
         ])
     }
     
