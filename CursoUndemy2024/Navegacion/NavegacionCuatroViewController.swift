@@ -23,9 +23,13 @@ class NavegacionCuatroViewController: UIViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         view.addSubview(listoLabel)
         view.addSubview(titleLabels)
+        
+        if let titleFinish = titleLabels.text {
+            self.title = titleFinish
+            view.backgroundColor = .white
+        }
 
        NSLayoutConstraint.activate([
         titleLabels.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),

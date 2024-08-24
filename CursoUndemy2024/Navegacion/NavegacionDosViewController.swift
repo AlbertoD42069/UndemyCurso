@@ -11,6 +11,8 @@ class NavegacionDosViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         view.backgroundColor = .green
         //let butonLeft = UIBarButtonItem(title: "rojo", style: .plain, target: self, action: #selector((goRojo)))
         //navigationItem.rightBarButtonItem = butonLeft
