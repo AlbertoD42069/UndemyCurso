@@ -28,7 +28,19 @@ class NavegacionCuatroViewController: UIViewController {
         
         if let titleFinish = titleLabels.text {
             self.title = titleFinish
-            view.backgroundColor = .white
+            
+            switch self.title {
+            case "Negro":
+                view.backgroundColor = .black
+                listoLabel.textColor = .white
+                titleLabels.textColor = .white
+            case "Rojo":
+                view.backgroundColor = .red
+            case "Blanco":
+                view.backgroundColor = .white
+            default:
+                "error"
+            }
         }
 
        NSLayoutConstraint.activate([

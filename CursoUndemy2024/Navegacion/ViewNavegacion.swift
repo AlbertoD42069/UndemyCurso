@@ -8,44 +8,46 @@
 import UIKit
 
 protocol ViewNavegacionProtocol: AnyObject {
-    func goNegro()
-    func goRojo()
-    func goAzul()
+    func goNextViewController(titleButton: String)
+
+   
 }
 
 class ViewNavegacion: UIView {
     
-    private let buttonNegro: UIButton = {
+     var buttonNegro: UIButton = {
         let btn : UIButton = UIButton(type: .system)
         btn.setTitle("Negro", for: .normal)
         btn.addTarget(self, action: #selector(goViewNegro), for: .touchUpInside)
+        btn.tag = 1
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.backgroundColor = .lightGray
         btn.layer.borderWidth = 1
         btn.layer.cornerRadius = 8
         return btn
     }()
-    private let buttonRojo: UIButton = {
+    var buttonRojo: UIButton = {
         let btn : UIButton = UIButton(type: .system)
         btn.setTitle("Rojo", for: .normal)
         btn.addTarget(self, action: #selector(goViewRojo), for: .touchUpInside)
+        btn.tag = 2
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.backgroundColor = .lightGray
         btn.layer.borderWidth = 1
         btn.layer.cornerRadius = 8
         return btn
     }()
-    private let buttonAzul: UIButton = {
+    var buttonBlanco: UIButton = {
         let btn : UIButton = UIButton(type: .system)
         btn.setTitle("Blanco", for: .normal)
-        btn.addTarget(self, action: #selector(goViewAzul), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(goViewBlanco), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.tag = 3
         btn.backgroundColor = .lightGray
         btn.layer.borderWidth = 1
         btn.layer.cornerRadius = 8
         return btn
     }()
-    
     var delegate : ViewNavegacionProtocol?
     override init (frame : CGRect) {
         super.init(frame : frame)
@@ -59,7 +61,7 @@ class ViewNavegacion: UIView {
     func addViews(){
         addSubview(buttonNegro)
         addSubview(buttonRojo)
-        addSubview(buttonAzul)
+        addSubview(buttonBlanco)
     }
     func autoLayout(){
         NSLayoutConstraint.activate([
@@ -71,24 +73,24 @@ class ViewNavegacion: UIView {
             buttonRojo.topAnchor.constraint(equalTo: buttonNegro.bottomAnchor, constant: 10),
             buttonRojo.widthAnchor.constraint(equalToConstant: 100),
             
-            buttonAzul.centerXAnchor.constraint(equalTo: centerXAnchor),
-            buttonAzul.topAnchor.constraint(equalTo: buttonRojo.bottomAnchor, constant: 10),
-            buttonAzul.widthAnchor.constraint(equalToConstant: 100),
+            buttonBlanco.centerXAnchor.constraint(equalTo: centerXAnchor),
+            buttonBlanco.topAnchor.constraint(equalTo: buttonRojo.bottomAnchor, constant: 10),
+            buttonBlanco.widthAnchor.constraint(equalToConstant: 100),
         ])
     }
     
     //MARK: obcj funtions
     
     @objc func goViewNegro(){
-        print("al negro")
-        delegate?.goNegro()
+        let title = buttonNegro.title(for: .normal)
+        delegate?.goNextViewController(titleButton: title!)
     }
     @objc func goViewRojo(){
-        print("al rojo")
-        delegate?.goRojo()
+        let title = buttonRojo.title(for: .normal)
+        delegate?.goNextViewController(titleButton: title!)
     }
-    @objc func goViewAzul(){
-        print("al azul")
-        delegate?.goAzul()
+    @objc func goViewBlanco(){
+        let title = buttonBlanco.title(for: .normal)
+        delegate?.goNextViewController(titleButton: title!)
     }
 }

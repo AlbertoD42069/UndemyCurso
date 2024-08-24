@@ -30,13 +30,18 @@ class ViewController: UIViewController {
    
 }
 extension ViewController: ViewNavegacionProtocol {
-    func goNegro() {
-        let vc = NavegacionDosViewController()
-        vc.title = "verde"
-        self.navigationController?.pushViewController(vc, animated: true)
-        
-    }
     
+    func goNextViewController(titleButton: String) {
+       let vc = NavegacionCuatroViewController()
+        vc.titleLabels.text = titleButton
+        self.navigationController?.present(vc, animated: true)
+    }
+}
+    
+    
+        //vc.title = "verde"
+        //self.navigationController?.pushViewController(vc, animated: true)
+    /*
     func goRojo() {
         let vc = NavegacionTresViewController()
         self.navigationController?.pushViewController(vc, animated: true)
@@ -48,9 +53,8 @@ extension ViewController: ViewNavegacionProtocol {
         vc.titleLabels.textColor = .black
         self.navigationController?.present(vc, animated: true)
     }
-    
-    
-}
+    */
+//}
 
 
 
