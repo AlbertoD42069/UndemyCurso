@@ -10,21 +10,21 @@ import UIKit
 class TableViewCurso: UIView {
     private let tableCurso: UITableView = {
         let table : UITableView = UITableView()
-        //table.register(SugerenciasTableViewCell.self, forCellReuseIdentifier: "cellSugerencia")
+        table.register(CellViewCurso.self, forCellReuseIdentifier: "cellCurso")
         table.translatesAutoresizingMaskIntoConstraints = false
-        //table.backgroundColor = .systemGreen
+        table.backgroundColor = .clear
         return table
     }()
     private let CursoUdemyView: UIView = {
         let view : UIView = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        //view.backgroundColor = .blue
+        view.backgroundColor = .clear
         return view
     }()
 
+    let continenteAmericano = ["mexico", "Estados Unidos", "guatemala", "peru", "brazil", "argentina","colombia", "venezuela","puerto rico", "belice"]
     override init (frame : CGRect) {
         super.init(frame : frame)
-        backgroundColor = .purple
         delegateTableView()
         addcomponets()
         setupViewContainter()
@@ -57,15 +57,21 @@ class TableViewCurso: UIView {
     }
 }
 extension TableViewCurso: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
 }
 extension TableViewCurso: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return continenteAmericano.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        
+        let cell = tableCurso.dequeueReusableCell(withIdentifier: "cellCurso", for: indexPath) as! CellViewCurso
+        
+        let model = continenteAmericano[indexPath.row]
+        cell.sugerenciaTxt.text = model.lowercased()
         return cell
     }
     
