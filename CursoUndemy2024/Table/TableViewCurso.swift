@@ -94,6 +94,7 @@ extension TableViewCurso: UITableViewDataSource {
             
             cell.descripcionCurso.text = continenteEuropero[indexPath.row]
             cell.descripcionCurso.font = UIFont(name: "Body", size: 20)
+            cell.imageCurso.image = UIImage(systemName: "circle.fill")
             return cell
         default:
             let cell = UITableViewCell()

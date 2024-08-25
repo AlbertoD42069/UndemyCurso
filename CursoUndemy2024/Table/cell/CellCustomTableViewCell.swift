@@ -45,7 +45,7 @@ class CellCustomTableViewCell: UITableViewCell {
     func addcomponets(){
         addSubview(titleCurso)
         addSubview(descripcionCurso)
-        //addSubview(imageCurso)
+        addSubview(imageCurso)
 
 
     }
@@ -59,6 +59,11 @@ class CellCustomTableViewCell: UITableViewCell {
             descripcionCurso.topAnchor.constraint(equalTo: titleCurso.bottomAnchor),
             descripcionCurso.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             descripcionCurso.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+            
+            imageCurso.leadingAnchor.constraint(equalTo: titleCurso.trailingAnchor, constant: 100),
+            imageCurso.centerYAnchor.constraint(equalTo: centerYAnchor),            imageCurso.widthAnchor.constraint(equalToConstant: 50),
+            imageCurso.heightAnchor.constraint(equalToConstant: 50),
+            
         ])
     }
 }
