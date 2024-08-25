@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "morado"
+        title = "continente americano"
         //let butonLeft = UIBarButtonItem(title: "verde", style: .plain, target: self, action: #selector((pushNav)))
         //navigationItem.rightBarButtonItem = butonLeft
         view.addSubview(viewNavegacion)

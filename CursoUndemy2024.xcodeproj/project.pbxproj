@@ -31,6 +31,7 @@
 		B3FDE4962C76CE12008C8599 /* ViewNavegacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FDE4952C76CE12008C8599 /* ViewNavegacion.swift */; };
 		B3FDE49B2C7A9AFF008C8599 /* TableViewCurso.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FDE49A2C7A9AFF008C8599 /* TableViewCurso.swift */; };
 		B3FDE4A12C7BAE26008C8599 /* CellViewCurso.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FDE4A02C7BAE26008C8599 /* CellViewCurso.swift */; };
+		B3FDE4A32C7BD52F008C8599 /* CellCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FDE4A22C7BD52F008C8599 /* CellCustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		B3FDE4952C76CE12008C8599 /* ViewNavegacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewNavegacion.swift; sourceTree = "<group>"; };
 		B3FDE49A2C7A9AFF008C8599 /* TableViewCurso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCurso.swift; sourceTree = "<group>"; };
 		B3FDE4A02C7BAE26008C8599 /* CellViewCurso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewCurso.swift; sourceTree = "<group>"; };
+		B3FDE4A22C7BD52F008C8599 /* CellCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				B3FDE4A02C7BAE26008C8599 /* CellViewCurso.swift */,
+				B3FDE4A22C7BD52F008C8599 /* CellCustomTableViewCell.swift */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				B3B423472C5CA09A00AA0723 /* ViewController.swift in Sources */,
 				B3FDE49B2C7A9AFF008C8599 /* TableViewCurso.swift in Sources */,
 				B3CFB46A2C6713970020ECCD /* WebViewController.swift in Sources */,
+				B3FDE4A32C7BD52F008C8599 /* CellCustomTableViewCell.swift in Sources */,
 				B3B423432C5CA09A00AA0723 /* AppDelegate.swift in Sources */,
 				B3CFB46C2C68122B0020ECCD /* MapViewController.swift in Sources */,
 				B367E3D52C6DC414004370FE /* SearchViewController.swift in Sources */,

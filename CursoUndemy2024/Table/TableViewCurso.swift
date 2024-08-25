@@ -11,8 +11,10 @@ class TableViewCurso: UIView {
     private let tableCurso: UITableView = {
         let table : UITableView = UITableView()
         table.register(CellViewCurso.self, forCellReuseIdentifier: "cellCurso")
+        table.register(CellCustomTableViewCell.self, forCellReuseIdentifier: "cellCursoTable")
         table.translatesAutoresizingMaskIntoConstraints = false
         table.backgroundColor = .clear
+
         return table
     }()
     private let CursoUdemyView: UIView = {
@@ -23,12 +25,12 @@ class TableViewCurso: UIView {
     }()
 
     let continenteAmericano = ["mexico", "Estados Unidos", "guatemala", "peru", "brazil", "argentina","colombia", "venezuela","puerto rico", "belice"]
+    let continenteEuropero = ["España", "francia", "rusia", "inglaterra", "suiza", "alemania", "italia", "africa"]
     override init (frame : CGRect) {
         super.init(frame : frame)
         delegateTableView()
         addcomponets()
         setupViewContainter()
-        
         
     }
     required init?(coder aDecoder: NSCoder) {
@@ -58,22 +60,44 @@ class TableViewCurso: UIView {
 }
 extension TableViewCurso: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        print(continenteAmericano[indexPath.row].lowercased())
     }
 }
 extension TableViewCurso: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return continenteAmericano.count
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
     }
-    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return continenteAmericano.count
+        }
+        else {
+            return continenteEuropero.count
+        }
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableCurso.dequeueReusableCell(withIdentifier: "cellCurso", for: indexPath) as! CellViewCurso
-        
-        let model = continenteAmericano[indexPath.row]
-        cell.sugerenciaTxt.text = model.lowercased()
-        return cell
+        switch indexPath.section {
+        case 0:
+            let cell = tableCurso.dequeueReusableCell(withIdentifier: "cellCurso", for: indexPath) as! CellViewCurso
+            let model = continenteAmericano[indexPath.row]
+            cell.sugerenciaTxt.text = model.lowercased()
+            cell.accessoryType = .disclosureIndicator
+            return cell
+        case 1:
+            let cell = tableCurso.dequeueReusableCell(withIdentifier: "cellCursoTable", for: indexPath) as! CellCustomTableViewCell
+            let model = continenteEuropero[indexPath.row]
+            cell.titleCurso.text = model.lowercased()
+            cell.titleCurso.font = UIFont(name: "Body", size: 20)
+            cell.titleCurso.textColor = .blue
+            cell.accessoryType = .disclosureIndicator
+            
+            cell.descripcionCurso.text = continenteEuropero[indexPath.row]
+            cell.descripcionCurso.font = UIFont(name: "Body", size: 20)
+            return cell
+        default:
+            let cell = UITableViewCell()
+            return cell
+        }
     }
-    
-    
 }
