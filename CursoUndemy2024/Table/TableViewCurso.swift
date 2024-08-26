@@ -64,6 +64,30 @@ extension TableViewCurso: UITableViewDelegate {
     }
 }
 extension TableViewCurso: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Continente Americano"
+        }
+        else {
+            return "Continente Europeo"
+        }
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 100
+    }
+    //funcion para agregar view en el titulo personalizado
+    //func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    //    //TODO
+    //}
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        if section == 0 {
+            return "de un lado del mundo"
+        } else {
+            return "del otro lado del mundo"
+        }
+        
+    }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
