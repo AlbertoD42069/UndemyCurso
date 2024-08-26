@@ -23,6 +23,7 @@ class CellCustomTableViewCell: UITableViewCell {
         label.font = UIFont(name: "Cookies-Regular", size: 25)
         label.textColor = .darkText
         label.textAlignment = .left
+        label.numberOfLines = 0
         return label
     }()
     var imageCurso: UIImageView = {
@@ -58,10 +59,11 @@ class CellCustomTableViewCell: UITableViewCell {
             
             descripcionCurso.topAnchor.constraint(equalTo: titleCurso.bottomAnchor),
             descripcionCurso.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            descripcionCurso.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
-            
+            descripcionCurso.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
+            descripcionCurso.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -100),
             imageCurso.leadingAnchor.constraint(equalTo: titleCurso.trailingAnchor, constant: 100),
-            imageCurso.centerYAnchor.constraint(equalTo: centerYAnchor),            imageCurso.widthAnchor.constraint(equalToConstant: 50),
+            
+            imageCurso.centerYAnchor.constraint(equalTo: centerYAnchor),          imageCurso.widthAnchor.constraint(equalToConstant: 50),
             imageCurso.heightAnchor.constraint(equalToConstant: 50),
             
         ])

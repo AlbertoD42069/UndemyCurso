@@ -95,10 +95,22 @@ extension TableViewCurso: UITableViewDataSource {
             cell.descripcionCurso.text = continenteEuropero[indexPath.row]
             cell.descripcionCurso.font = UIFont(name: "Body", size: 20)
             cell.imageCurso.image = UIImage(systemName: "circle.fill")
+            if indexPath.row == 2 {
+                cell.descripcionCurso.text = "aslkdnaslkdnasldnlaskdmlmfafgn oñfjaeofkjdfjadalfñsdlksds"
+            }
             return cell
         default:
             let cell = UITableViewCell()
             return cell
+        }
+                
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 50
+        }
+        else {
+            return UITableView.automaticDimension
         }
     }
 }
