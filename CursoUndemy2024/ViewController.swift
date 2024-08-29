@@ -9,8 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private let viewNavegacion : TableViewCurso = {
-        let view: TableViewCurso = TableViewCurso()
+    private let viewNavegacion : CollectionViewCurso = {
+        let view: CollectionViewCurso = CollectionViewCurso()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
