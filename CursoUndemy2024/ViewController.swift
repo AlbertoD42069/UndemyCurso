@@ -10,9 +10,10 @@ import UIKit
 class ViewController: UIViewController {
     
     private let viewNavegacion : CollectionViewCurso = {
-        let view: CollectionViewCurso = CollectionViewCurso()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+        let viewCollection: CollectionViewCurso = CollectionViewCurso()
+        viewCollection.translatesAutoresizingMaskIntoConstraints = false
+        viewCollection
+        return viewCollection
     }()
     override func viewDidLoad() {
         super.viewDidLoad()

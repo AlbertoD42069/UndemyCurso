@@ -17,15 +17,22 @@ class CollectionViewCurso: UIView {
     }()
     private let collectionViewCustom: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.itemSize = .init(width: 100, height: 100)
-        let cell = UICollectionViewCell()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = .init(width: 150, height: 150)
+        layout.minimumLineSpacing = 100
+        layout.minimumInteritemSpacing = 100
+        layout.minimumLineSpacing = 5
+        layout.minimumInteritemSpacing = 10
         let collection: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.backgroundColor = .blue
+        collection.register(CursoCollectionViewCell.self, forCellWithReuseIdentifier: "CursoCollectionViewCell")
+        collection.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
         return collection
     }()
     let continenteAmericano = ["mexico", "Estados Unidos", "guatemala", "peru", "brazil", "argentina","colombia", "venezuela","puerto rico", "belice"]
+    let continenteEuropero = ["España", "francia", "rusia", "inglaterra", "suiza", "alemania", "italia", "africa"]
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
@@ -55,15 +62,49 @@ class CollectionViewCurso: UIView {
 }
 
 extension CollectionViewCurso: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let model = continenteAmericano.count
-        return model
+        
+        switch section {
+        case 0:
+            let model = continenteAmericano.count
+            return model
+        case 1:
+            let model = continenteEuropero.count
+            return model
+        default:
+            return 0
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cellCollection = collectionViewCustom.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath) as! UICollectionViewCell
         
-        return cellCollection
+        switch indexPath.section {
+        case 0:
+            let cellCollection = collectionViewCustom.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
+            cellCollection.backgroundColor = .gray
+            let modeloContinenteAmericano = continenteAmericano[indexPath.row]
+            var listaContinenteAmericano = UIListContentConfiguration.cell()
+            listaContinenteAmericano.text = modeloContinenteAmericano
+            listaContinenteAmericano.image = UIImage(systemName: "circle.fill")
+            cellCollection.contentConfiguration = listaContinenteAmericano
+            return cellCollection
+        case 1:
+            let cellCollection = collectionViewCustom.dequeueReusableCell(withReuseIdentifier: "CursoCollectionViewCell", for: indexPath) as! CursoCollectionViewCell
+            cellCollection.backgroundColor = .gray
+            let modeloContinenteAmericano = continenteEuropero[indexPath.row]
+            cellCollection.addContinente(continente: modeloContinenteAmericano)
+            return cellCollection
+        default:
+            let colecion = UICollectionViewCell()
+            return colecion
+        }
+        
     }
     
     
