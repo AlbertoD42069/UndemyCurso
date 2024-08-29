@@ -9,20 +9,15 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private let viewNavegacion : CollectionViewCurso = {
-        let viewCollection: CollectionViewCurso = CollectionViewCurso()
+    private let viewNavegacion : FabricaAutos = {
+        let viewCollection: FabricaAutos = FabricaAutos()
         viewCollection.translatesAutoresizingMaskIntoConstraints = false
-        viewCollection
         return viewCollection
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        //title = "morado"
-        title = "continente americano"
-        //let butonLeft = UIBarButtonItem(title: "verde", style: .plain, target: self, action: #selector((pushNav)))
-        //navigationItem.rightBarButtonItem = butonLeft
+        title = "Fabrica de autos"
         view.addSubview(viewNavegacion)
-        //viewNavegacion.delegate = self
 
         NSLayoutConstraint.activate([
             viewNavegacion.topAnchor.constraint(equalTo: view.topAnchor),
@@ -33,12 +28,12 @@ class ViewController: UIViewController {
     }
    
 }
-extension ViewController: ViewNavegacionProtocol {
+extension ViewController: FabricaAutosProtocol {
     
     func goNextViewController(titleButton: String) {
-       let vc = NavegacionCuatroViewController()
-        vc.titleLabels.text = titleButton
-        self.navigationController?.present(vc, animated: true)
+       let vc = AutoCreadoViewController()
+        //vc.titleLabels.text = titleButton
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
     

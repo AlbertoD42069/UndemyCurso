@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		B30D54112C802A6500A0947D /* CollectionViewCurso.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30D54102C802A6500A0947D /* CollectionViewCurso.swift */; };
 		B30D54132C802F2D00A0947D /* CursoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30D54122C802F2D00A0947D /* CursoCollectionViewCell.swift */; };
+		B30D54182C81170200A0947D /* FabricaAutos.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30D54172C81170200A0947D /* FabricaAutos.swift */; };
+		B30D541B2C8119B200A0947D /* Automovil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30D541A2C8119B200A0947D /* Automovil.swift */; };
+		B30D541D2C811F3500A0947D /* AutoCreadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30D541C2C811F3500A0947D /* AutoCreadoViewController.swift */; };
+		B30D541F2C811F7C00A0947D /* AutoCreado.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30D541E2C811F7C00A0947D /* AutoCreado.swift */; };
 		B367E3D52C6DC414004370FE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367E3D42C6DC414004370FE /* SearchViewController.swift */; };
 		B367E3D72C704856004370FE /* NavegacionCursoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367E3D62C704856004370FE /* NavegacionCursoViewController.swift */; };
 		B367E3D92C704F52004370FE /* NavegacionDosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367E3D82C704F52004370FE /* NavegacionDosViewController.swift */; };
@@ -39,6 +43,10 @@
 /* Begin PBXFileReference section */
 		B30D54102C802A6500A0947D /* CollectionViewCurso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCurso.swift; sourceTree = "<group>"; };
 		B30D54122C802F2D00A0947D /* CursoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursoCollectionViewCell.swift; sourceTree = "<group>"; };
+		B30D54172C81170200A0947D /* FabricaAutos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FabricaAutos.swift; sourceTree = "<group>"; };
+		B30D541A2C8119B200A0947D /* Automovil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Automovil.swift; sourceTree = "<group>"; };
+		B30D541C2C811F3500A0947D /* AutoCreadoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCreadoViewController.swift; sourceTree = "<group>"; };
+		B30D541E2C811F7C00A0947D /* AutoCreado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCreado.swift; sourceTree = "<group>"; };
 		B367E3D42C6DC414004370FE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		B367E3D62C704856004370FE /* NavegacionCursoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavegacionCursoViewController.swift; sourceTree = "<group>"; };
 		B367E3D82C704F52004370FE /* NavegacionDosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavegacionDosViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +104,41 @@
 			path = cell;
 			sourceTree = "<group>";
 		};
+		B30D54162C8116D400A0947D /* FabricaDeAutos */ = {
+			isa = PBXGroup;
+			children = (
+				B30D54212C81245100A0947D /* AutoCreado */,
+				B30D54202C81243000A0947D /* ModeloAuto */,
+				B30D54192C81182500A0947D /* Fabrica */,
+			);
+			path = FabricaDeAutos;
+			sourceTree = "<group>";
+		};
+		B30D54192C81182500A0947D /* Fabrica */ = {
+			isa = PBXGroup;
+			children = (
+				B30D54172C81170200A0947D /* FabricaAutos.swift */,
+			);
+			path = Fabrica;
+			sourceTree = "<group>";
+		};
+		B30D54202C81243000A0947D /* ModeloAuto */ = {
+			isa = PBXGroup;
+			children = (
+				B30D541A2C8119B200A0947D /* Automovil.swift */,
+			);
+			path = ModeloAuto;
+			sourceTree = "<group>";
+		};
+		B30D54212C81245100A0947D /* AutoCreado */ = {
+			isa = PBXGroup;
+			children = (
+				B30D541C2C811F3500A0947D /* AutoCreadoViewController.swift */,
+				B30D541E2C811F7C00A0947D /* AutoCreado.swift */,
+			);
+			path = AutoCreado;
+			sourceTree = "<group>";
+		};
 		B3B423362C5CA09A00AA0723 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +158,8 @@
 		B3B423412C5CA09A00AA0723 /* CursoUndemy2024 */ = {
 			isa = PBXGroup;
 			children = (
+				B3B423462C5CA09A00AA0723 /* ViewController.swift */,
+				B30D54162C8116D400A0947D /* FabricaDeAutos */,
 				B30D540F2C802A3700A0947D /* Collection */,
 				B3FDE4992C7A9ACC008C8599 /* Table */,
 				B3FDE4942C76CC31008C8599 /* Curso */,
@@ -122,7 +167,6 @@
 				B3CFB4622C61ADAF0020ECCD /* Palindromo */,
 				B3B423422C5CA09A00AA0723 /* AppDelegate.swift */,
 				B3B423442C5CA09A00AA0723 /* SceneDelegate.swift */,
-				B3B423462C5CA09A00AA0723 /* ViewController.swift */,
 				B3B423482C5CA09A00AA0723 /* Main.storyboard */,
 				B3B4234B2C5CA09C00AA0723 /* Assets.xcassets */,
 				B3B4234D2C5CA09C00AA0723 /* LaunchScreen.storyboard */,
@@ -263,13 +307,17 @@
 				B3CFB46A2C6713970020ECCD /* WebViewController.swift in Sources */,
 				B30D54112C802A6500A0947D /* CollectionViewCurso.swift in Sources */,
 				B3FDE4A32C7BD52F008C8599 /* CellCustomTableViewCell.swift in Sources */,
+				B30D541F2C811F7C00A0947D /* AutoCreado.swift in Sources */,
 				B3B423432C5CA09A00AA0723 /* AppDelegate.swift in Sources */,
+				B30D541D2C811F3500A0947D /* AutoCreadoViewController.swift in Sources */,
 				B3CFB46C2C68122B0020ECCD /* MapViewController.swift in Sources */,
 				B367E3D52C6DC414004370FE /* SearchViewController.swift in Sources */,
 				B367E3D92C704F52004370FE /* NavegacionDosViewController.swift in Sources */,
 				B3DE286F2C5DA13500F9BE12 /* ControlsAndViewsViewController.swift in Sources */,
 				B30D54132C802F2D00A0947D /* CursoCollectionViewCell.swift in Sources */,
+				B30D541B2C8119B200A0947D /* Automovil.swift in Sources */,
 				B3FDE4962C76CE12008C8599 /* ViewNavegacion.swift in Sources */,
+				B30D54182C81170200A0947D /* FabricaAutos.swift in Sources */,
 				B3CFB4682C65999D0020ECCD /* ScrollViewController.swift in Sources */,
 				B3B423452C5CA09A00AA0723 /* SceneDelegate.swift in Sources */,
 				B367E3D72C704856004370FE /* NavegacionCursoViewController.swift in Sources */,
