@@ -16,8 +16,7 @@ class AutoCreadoViewController: UIViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewNavegacion.delegate = self
-        title = "Auto Creado"
+        //title = "Auto Creado"
         view.addSubview(viewNavegacion)
         view.backgroundColor = .white
 
@@ -28,12 +27,9 @@ class AutoCreadoViewController: UIViewController {
             viewNavegacion.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
     }
-}
-extension AutoCreadoViewController : AutoCreadoProtocol {
-    func setupComponentes() {
-        viewNavegacion.backgroundColor = .red
-        
+    func setupComp(titleAuto: String){
+        let tituloAuto = titleAuto
+        title = "Auto --\(tituloAuto) -- Creado"
+        viewNavegacion.setupAutoView(titleAuto: tituloAuto)
     }
-    
-    
 }

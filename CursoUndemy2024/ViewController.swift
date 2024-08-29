@@ -34,6 +34,7 @@ extension ViewController: FabricaAutosProtocol {
     
     func goNextViewController(titleButton: String) {
        let vc = AutoCreadoViewController()
+        vc.setupComp(titleAuto: titleButton)
         //vc.titleLabels.text = titleButton
         self.navigationController?.pushViewController(vc, animated: true)
     }

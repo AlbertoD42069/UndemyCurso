@@ -26,7 +26,7 @@ class AutoCreado: UIView {
     override init (frame : CGRect) {
         super.init(frame : frame)
         addComponentes()
-        setupNavegation()
+        //setupNavegation()
         setupAutoLayout()
         
     }
@@ -36,23 +36,20 @@ class AutoCreado: UIView {
     func addComponentes(){
         addSubview(listoLabel)
     }
-    func setupNavegation(){
-        delegate?.setupComponentes()
-        /*
-        if let titleFinish = titleLabels.text {
-            switch titleFinish {
+    func setupAutoView(titleAuto: String){
+        //if let titleFinish = titleLabels.text {
+            switch titleAuto {
             case "Tsuru":
                 backgroundColor = .black
                 listoLabel.textColor = .white
-                titleLabels.textColor = .white
             case "Mazda":
                 backgroundColor = .red
             case "Spark":
                 backgroundColor = .white
             default:
                 print("error")
-            }
-        }*/
+            //}
+        }
     }
     func setupAutoLayout(){
         
