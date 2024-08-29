@@ -18,11 +18,12 @@ class CollectionViewCurso: UIView {
     private let collectionViewCustom: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = .init(width: 150, height: 150)
-        layout.minimumLineSpacing = 100
-        layout.minimumInteritemSpacing = 100
-        layout.minimumLineSpacing = 5
-        layout.minimumInteritemSpacing = 10
+        layout.itemSize = .init(width: 100, height: 100)
+        layout.estimatedItemSize.width = 0
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
         let collection: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.backgroundColor = .blue
@@ -32,7 +33,7 @@ class CollectionViewCurso: UIView {
     }()
     let continenteAmericano = ["mexico", "Estados Unidos", "guatemala", "peru", "brazil", "argentina","colombia", "venezuela","puerto rico", "belice"]
     let continenteEuropero = ["España", "francia", "rusia", "inglaterra", "suiza", "alemania", "italia", "africa"]
-
+    private let myCellWidth = UIScreen.main.bounds.width / 2
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
@@ -48,6 +49,8 @@ class CollectionViewCurso: UIView {
             collectionViewCustom.leadingAnchor.constraint(equalTo: viewCollection.leadingAnchor, constant: 5),
             collectionViewCustom.trailingAnchor.constraint(equalTo: viewCollection.trailingAnchor, constant: -5),
             collectionViewCustom.bottomAnchor.constraint(equalTo: viewCollection.bottomAnchor, constant: -5),
+            //tamaño de altura de la colleccion
+            collectionViewCustom.heightAnchor.constraint(equalToConstant: 300)
         ])
         setupDelegateCollectionView()
     }
@@ -58,6 +61,7 @@ class CollectionViewCurso: UIView {
     
     func setupDelegateCollectionView(){
         collectionViewCustom.dataSource = self
+        collectionViewCustom.delegate = self
     }
 }
 
@@ -79,7 +83,6 @@ extension CollectionViewCurso: UICollectionViewDataSource {
         default:
             return 0
         }
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -104,8 +107,24 @@ extension CollectionViewCurso: UICollectionViewDataSource {
             let colecion = UICollectionViewCell()
             return colecion
         }
-        
     }
-    
-    
+}
+
+extension CollectionViewCurso: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let modeloContinenteAmericano = continenteAmericano[indexPath.row]
+        print("\(indexPath.section) -> \(indexPath.row) -> \(modeloContinenteAmericano)")
+    }
+}
+extension CollectionViewCurso: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        switch indexPath.section {
+        case 0:
+            return CGSize(width: myCellWidth, height: myCellWidth)
+        case 1:
+            return CGSize(width: myCellWidth * 2, height: myCellWidth * 2)
+        default:
+            return CGSize(width: 0, height: 0)
+        }
+    }
 }
