@@ -16,9 +16,11 @@ class CollectionViewCurso: UIView {
         return view
     }()
     private let collectionViewCustom: UICollectionView = {
-        let layout = UICollectionViewLayout()
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.itemSize = .init(width: 100, height: 100)
+        let cell = UICollectionViewCell()
         let collection: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.backgroundColor = .blue
         return collection
@@ -40,10 +42,29 @@ class CollectionViewCurso: UIView {
             collectionViewCustom.trailingAnchor.constraint(equalTo: viewCollection.trailingAnchor, constant: -5),
             collectionViewCustom.bottomAnchor.constraint(equalTo: viewCollection.bottomAnchor, constant: -5),
         ])
+        setupDelegateCollectionView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-        
     }
+    
+    func setupDelegateCollectionView(){
+        collectionViewCustom.dataSource = self
+    }
+}
+
+extension CollectionViewCurso: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let model = continenteAmericano.count
+        return model
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cellCollection = collectionViewCustom.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath) as! UICollectionViewCell
+        
+        return cellCollection
+    }
+    
+    
 }
