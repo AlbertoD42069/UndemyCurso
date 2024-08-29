@@ -8,26 +8,15 @@
 import UIKit
 
 class NavegacionTresViewController: UIViewController {
-    /*
-    private let button: UIButton = {
-        let btn : UIButton = UIButton(type: .system)
-        btn.setTitle("blanco", for: .normal)
-        btn.addTarget(self, action: #selector(goWhite), for: .touchUpInside)
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.backgroundColor = .lightGray
-        btn.layer.borderWidth = 1
-        btn.layer.cornerRadius = 8
-        return btn
-    }()
-    */
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let butonLeft = UIBarButtonItem(title: "blanco", style: .plain, target: self, action: #selector((goWhite)))
-        navigationItem.rightBarButtonItem = butonLeft
+        //let butonLeft = UIBarButtonItem(title: "blanco", style: .plain, target: self, action: #selector((goWhite)))
+        //navigationItem.rightBarButtonItem = butonLeft
 
         view.backgroundColor = .red
        //view.addSubview(button)
-        title = "rojo"
+        //title = "rojo"
 /*
         NSLayoutConstraint.activate([
             button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -41,8 +30,6 @@ class NavegacionTresViewController: UIViewController {
         print("presionado")
         let vc =  NavegacionCuatroViewController()
         self.navigationController?.pushViewController(vc, animated: true)
-        
-        
     }
 
 }
