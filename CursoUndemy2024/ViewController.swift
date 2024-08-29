@@ -9,16 +9,19 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private let viewNavegacion : ViewNavegacion = {
-        let view: ViewNavegacion = ViewNavegacion()
+    private let viewNavegacion : TableViewCurso = {
+        let view: TableViewCurso = TableViewCurso()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "morado"
+        //title = "morado"
+        title = "continente americano"
+        //let butonLeft = UIBarButtonItem(title: "verde", style: .plain, target: self, action: #selector((pushNav)))
+        //navigationItem.rightBarButtonItem = butonLeft
         view.addSubview(viewNavegacion)
-        viewNavegacion.delegate = self
+        //viewNavegacion.delegate = self
 
         NSLayoutConstraint.activate([
             viewNavegacion.topAnchor.constraint(equalTo: view.topAnchor),

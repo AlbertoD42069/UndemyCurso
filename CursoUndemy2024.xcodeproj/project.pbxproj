@@ -29,6 +29,9 @@
 		B3FDE4902C758ADE008C8599 /* NavegacionTresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FDE48F2C758ADE008C8599 /* NavegacionTresViewController.swift */; };
 		B3FDE4922C758AF1008C8599 /* NavegacionCuatroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FDE4912C758AF1008C8599 /* NavegacionCuatroViewController.swift */; };
 		B3FDE4962C76CE12008C8599 /* ViewNavegacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FDE4952C76CE12008C8599 /* ViewNavegacion.swift */; };
+		B3FDE49B2C7A9AFF008C8599 /* TableViewCurso.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FDE49A2C7A9AFF008C8599 /* TableViewCurso.swift */; };
+		B3FDE4A12C7BAE26008C8599 /* CellViewCurso.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FDE4A02C7BAE26008C8599 /* CellViewCurso.swift */; };
+		B3FDE4A32C7BD52F008C8599 /* CellCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FDE4A22C7BD52F008C8599 /* CellCustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,9 @@
 		B3FDE48F2C758ADE008C8599 /* NavegacionTresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavegacionTresViewController.swift; sourceTree = "<group>"; };
 		B3FDE4912C758AF1008C8599 /* NavegacionCuatroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavegacionCuatroViewController.swift; sourceTree = "<group>"; };
 		B3FDE4952C76CE12008C8599 /* ViewNavegacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewNavegacion.swift; sourceTree = "<group>"; };
+		B3FDE49A2C7A9AFF008C8599 /* TableViewCurso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCurso.swift; sourceTree = "<group>"; };
+		B3FDE4A02C7BAE26008C8599 /* CellViewCurso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewCurso.swift; sourceTree = "<group>"; };
+		B3FDE4A22C7BD52F008C8599 /* CellCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,7 @@
 		B3B423412C5CA09A00AA0723 /* CursoUndemy2024 */ = {
 			isa = PBXGroup;
 			children = (
+				B3FDE4992C7A9ACC008C8599 /* Table */,
 				B3FDE4942C76CC31008C8599 /* Curso */,
 				B3FDE4932C76CC08008C8599 /* Navegacion */,
 				B3CFB4622C61ADAF0020ECCD /* Palindromo */,
@@ -137,6 +144,24 @@
 				B367E3D42C6DC414004370FE /* SearchViewController.swift */,
 			);
 			path = Curso;
+			sourceTree = "<group>";
+		};
+		B3FDE4992C7A9ACC008C8599 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				B3FDE49F2C7BADE4008C8599 /* cell */,
+				B3FDE49A2C7A9AFF008C8599 /* TableViewCurso.swift */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		B3FDE49F2C7BADE4008C8599 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				B3FDE4A02C7BAE26008C8599 /* CellViewCurso.swift */,
+				B3FDE4A22C7BD52F008C8599 /* CellCustomTableViewCell.swift */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,7 +237,9 @@
 			files = (
 				B3FDE4922C758AF1008C8599 /* NavegacionCuatroViewController.swift in Sources */,
 				B3B423472C5CA09A00AA0723 /* ViewController.swift in Sources */,
+				B3FDE49B2C7A9AFF008C8599 /* TableViewCurso.swift in Sources */,
 				B3CFB46A2C6713970020ECCD /* WebViewController.swift in Sources */,
+				B3FDE4A32C7BD52F008C8599 /* CellCustomTableViewCell.swift in Sources */,
 				B3B423432C5CA09A00AA0723 /* AppDelegate.swift in Sources */,
 				B3CFB46C2C68122B0020ECCD /* MapViewController.swift in Sources */,
 				B367E3D52C6DC414004370FE /* SearchViewController.swift in Sources */,
@@ -223,6 +250,7 @@
 				B3B423452C5CA09A00AA0723 /* SceneDelegate.swift in Sources */,
 				B367E3D72C704856004370FE /* NavegacionCursoViewController.swift in Sources */,
 				B3DE286D2C5D9D6B00F9BE12 /* VistasViewController.swift in Sources */,
+				B3FDE4A12C7BAE26008C8599 /* CellViewCurso.swift in Sources */,
 				B3CFB4642C61ADC90020ECCD /* PalindromoViewController.swift in Sources */,
 				B3FDE4902C758ADE008C8599 /* NavegacionTresViewController.swift in Sources */,
 				B3DE28712C5DA17A00F9BE12 /* ViewHome.swift in Sources */,
