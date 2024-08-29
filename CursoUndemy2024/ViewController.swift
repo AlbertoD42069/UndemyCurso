@@ -18,6 +18,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         title = "Fabrica de autos"
         view.addSubview(viewNavegacion)
+        viewNavegacion.delegate = self
+
 
         NSLayoutConstraint.activate([
             viewNavegacion.topAnchor.constraint(equalTo: view.topAnchor),

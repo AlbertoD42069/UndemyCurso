@@ -8,26 +8,26 @@
 import Foundation
 import UIKit
 
+protocol AutoCreadoProtocol: AnyObject {
+    func setupComponentes()
+}
+
 class AutoCreado: UIView {
-    
-    let titleLabels: UILabel = {
-        let label : UILabel = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
-        return label
-    }()
     private let listoLabel: UILabel = {
         let label : UILabel = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Listo"
+        label.textAlignment = .center
         return label
     }()
     
+    var delegate : AutoCreadoProtocol?
+
     override init (frame : CGRect) {
         super.init(frame : frame)
         addComponentes()
         setupNavegation()
-        setupNavegation()
+        setupAutoLayout()
         
     }
     required init?(coder aDecoder: NSCoder) {
@@ -35,33 +35,32 @@ class AutoCreado: UIView {
     }
     func addComponentes(){
         addSubview(listoLabel)
-        addSubview(titleLabels)
     }
     func setupNavegation(){
-        
+        delegate?.setupComponentes()
+        /*
         if let titleFinish = titleLabels.text {
             switch titleFinish {
-            case "Negro":
+            case "Tsuru":
                 backgroundColor = .black
                 listoLabel.textColor = .white
                 titleLabels.textColor = .white
-            case "Rojo":
+            case "Mazda":
                 backgroundColor = .red
-            case "Blanco":
+            case "Spark":
                 backgroundColor = .white
             default:
                 print("error")
             }
-        }
+        }*/
     }
     func setupAutoLayout(){
         
         NSLayoutConstraint.activate([
-         titleLabels.topAnchor.constraint(equalTo: topAnchor, constant: 50),
-         titleLabels.centerXAnchor.constraint(equalTo: centerXAnchor),
+            listoLabel.safeAreaLayoutGuide.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 5),
+            listoLabel.safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -5),
+            listoLabel.safeAreaLayoutGuide.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 5),
 
-         listoLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-         listoLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
          ])
     }
 }

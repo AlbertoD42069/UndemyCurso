@@ -16,9 +16,10 @@ class AutoCreadoViewController: UIViewController {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        viewNavegacion.delegate = self
         title = "Auto Creado"
         view.addSubview(viewNavegacion)
+        view.backgroundColor = .white
 
         NSLayoutConstraint.activate([
             viewNavegacion.topAnchor.constraint(equalTo: view.topAnchor),
@@ -27,4 +28,12 @@ class AutoCreadoViewController: UIViewController {
             viewNavegacion.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
     }
+}
+extension AutoCreadoViewController : AutoCreadoProtocol {
+    func setupComponentes() {
+        viewNavegacion.backgroundColor = .red
+        
+    }
+    
+    
 }
