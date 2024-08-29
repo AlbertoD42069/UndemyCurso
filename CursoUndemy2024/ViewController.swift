@@ -6,18 +6,19 @@
 //
 
 import UIKit
+import Foundation
 
 class ViewController: UIViewController {
     
-    private let viewNavegacion : ViewNavegacion = {
-        let view: ViewNavegacion = ViewNavegacion()
+    private let viewNavegacion : CollectionCursoViewControllers = {
+        let view: CollectionCursoViewControllers = CollectionCursoViewControllers()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "morado"
+        title = "coleccion"
         //let butonLeft = UIBarButtonItem(title: "verde", style: .plain, target: self, action: #selector((pushNav)))
         //navigationItem.rightBarButtonItem = butonLeft
         view.addSubview(viewNavegacion)
