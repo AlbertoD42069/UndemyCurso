@@ -121,7 +121,7 @@ class AutoCreado: UIView {
     var btnAcelerar: UIButton = {
         let btn : UIButton = UIButton(type: .system)
         btn.setTitle("Acelerar", for: .normal)
-       btn.addTarget(self, action: #selector(encenderAuto), for: .touchUpInside)
+       btn.addTarget(self, action: #selector(autoCaminando), for: .touchUpInside)
         btn.tag = 1
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.backgroundColor = .lightGray
@@ -133,8 +133,8 @@ class AutoCreado: UIView {
     var btnFrenar: UIButton = {
        let btn : UIButton = UIButton(type: .system)
        btn.setTitle("Frenar", for: .normal)
-       btn.addTarget(self, action: #selector(apagarAuto), for: .touchUpInside)
-       btn.tag = 1
+       btn.addTarget(self, action: #selector(autoParado), for: .touchUpInside)
+       btn.tag = 2
        btn.translatesAutoresizingMaskIntoConstraints = false
        btn.backgroundColor = .lightGray
        btn.layer.borderWidth = 1
@@ -147,6 +147,22 @@ class AutoCreado: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.isHidden = true
         return view
+    }()
+    private let statusAutoEncendido: UILabel = {
+        let label : UILabel = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.text = "auto apagado"
+        return label
+    }()
+    private let statusAutoCaminando: UILabel = {
+        let label : UILabel = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "el auto esta detenido"
+        label.textAlignment = .center
+        label.isHidden = true
+        
+        return label
     }()
     //var delegate : AutoCreadoProtocol?
     var autoData = Automovil()
@@ -184,9 +200,14 @@ class AutoCreado: UIView {
         stackDetalles.addArrangedSubview(añoModeloLbl)
         stackDetalles.addArrangedSubview(marcaLbl)
         
+        contentViewAuto.addSubview(statusAutoEncendido)
+        
         contentViewAuto.addSubview(contentBtnEncendido)
         contentBtnEncendido.addSubview(btnAcelerar)
         contentBtnEncendido.addSubview(btnFrenar)
+        
+        contentViewAuto.addSubview(statusAutoCaminando)
+
 
     }
     func setupAutoView(titleAuto: String){
@@ -204,7 +225,7 @@ class AutoCreado: UIView {
 
                 colorLbl.text = "color: \(autoData.color ?? "")"
                 numeroLlantaLbl.text = "llantas: \(autoData.numeroLlantas ?? "")"
-                precioLbl.text = "precio: \(autoData.precio ?? "")"
+                precioLbl.text = "precio: $ \(autoData.precio ?? "")"
                 añoModeloLbl.text = "año: \(autoData.añoModelo ?? "")"
                 marcaLbl.text = "marca: \(titleAuto)"
                 
@@ -219,7 +240,7 @@ class AutoCreado: UIView {
                 
                 colorLbl.text = "color: \(autoData.color ?? "")"
                 numeroLlantaLbl.text = "llantas: \(autoData.numeroLlantas ?? "")"
-                precioLbl.text = "precio: \(autoData.precio ?? "")"
+                precioLbl.text = "precio: $ \(autoData.precio ?? "")"
                 añoModeloLbl.text = "año: \(autoData.añoModelo ?? "")"
                 marcaLbl.text = "marca: \(titleAuto)"
                 
@@ -235,7 +256,7 @@ class AutoCreado: UIView {
                 
                 colorLbl.text = "color: \(autoData.color ?? "")"
                 numeroLlantaLbl.text = "llantas: \(autoData.numeroLlantas ?? "")"
-                precioLbl.text = "precio: \(autoData.precio ?? "")"
+                precioLbl.text = "precio: $ \(autoData.precio ?? "")"
                 añoModeloLbl.text = "año: \(autoData.añoModelo ?? "")"
                 marcaLbl.text = "marca: \(titleAuto)"
                 
@@ -295,7 +316,11 @@ class AutoCreado: UIView {
             stackDetalles.leadingAnchor.constraint(equalTo: contentViewAuto.leadingAnchor, constant: 5),
             stackDetalles.heightAnchor.constraint(equalToConstant: 150),
             
-            contentBtnEncendido.topAnchor.constraint(equalTo: stackDetalles.bottomAnchor, constant:  5),
+            statusAutoEncendido.topAnchor.constraint(equalTo: stackDetalles.bottomAnchor, constant:  5),
+            statusAutoEncendido.trailingAnchor.constraint(equalTo: contentViewAuto.trailingAnchor, constant: -5),
+            statusAutoEncendido.leadingAnchor.constraint(equalTo: contentViewAuto.leadingAnchor, constant: 5),
+            
+            contentBtnEncendido.topAnchor.constraint(equalTo: statusAutoEncendido.bottomAnchor, constant:  5),
             contentBtnEncendido.trailingAnchor.constraint(equalTo: contentViewAuto.trailingAnchor, constant: -50),
             contentBtnEncendido.leadingAnchor.constraint(equalTo: contentViewAuto.leadingAnchor, constant: 50),
             contentBtnEncendido.heightAnchor.constraint(equalToConstant: 70),
@@ -309,24 +334,63 @@ class AutoCreado: UIView {
             btnFrenar.trailingAnchor.constraint(equalTo: contentBtnEncendido.trailingAnchor, constant: -5),
             btnFrenar.widthAnchor.constraint(equalToConstant: 125),
             btnFrenar.heightAnchor.constraint(equalToConstant: 50),
+            
+            statusAutoCaminando.topAnchor.constraint(equalTo: contentBtnEncendido.bottomAnchor, constant: 5),
+            statusAutoCaminando.leadingAnchor.constraint(equalTo: contentBtnEncendido.leadingAnchor, constant: 5),
+            statusAutoCaminando.trailingAnchor.constraint(equalTo: contentBtnEncendido.trailingAnchor, constant: -5),
+
+            
         ])
         //stackDetalles.setCustomSpacing(50, after: colorLbl)
     }
     
     @objc func encenderAuto(){
-        btnEncender.backgroundColor = .green
-        btnApagar.backgroundColor = .lightGray
         statusAuto = autoData.encender()
-        contentBtnEncendido.isHidden = false
-    }
-    @objc func apagarAuto(){
-        btnEncender.backgroundColor = .lightGray
-        btnApagar.backgroundColor = .red
-        statusAuto = autoData.apagar()
-        contentBtnEncendido.isHidden = true
+        statusAuto(status: statusAuto ?? false)
+        statusAutoCaminando.isHidden = false
 
     }
+    @objc func apagarAuto(){
+        statusAuto = autoData.apagar()
+        statusAuto(status: statusAuto ?? false)
+        statusAutoCaminando.isHidden = true
+
+    }
+    
+    @objc func autoCaminando(){
+        let puchButton = btnAcelerar.tag
+        elAutoEstaCaminando(statusButton: puchButton)
+    }
+    @objc func autoParado(){
+        let puchButton = btnFrenar.tag
+        elAutoEstaCaminando(statusButton: puchButton)
+
+    }
+    
+    
     func statusAuto(status: Bool){
-        
+        if status {
+            contentBtnEncendido.isHidden = false
+            btnEncender.backgroundColor = .green
+            btnApagar.backgroundColor = .lightGray
+            statusAutoEncendido.text = "auto encendido correctamente"
+
+        }else {
+            contentBtnEncendido.isHidden = true
+            btnEncender.backgroundColor = .lightGray
+            btnApagar.backgroundColor = .red
+            statusAutoEncendido.text = "auto apagado correctamente"
+
+        }
+    }
+    func elAutoEstaCaminando(statusButton tag: Int){
+        switch tag {
+        case 1:
+            statusAutoCaminando.text = "el auto esta caminando"
+        case 2:
+            statusAutoCaminando.text = "el auto se dettuvo"
+        default:
+            "error de movimiento"
+        }
     }
 }
