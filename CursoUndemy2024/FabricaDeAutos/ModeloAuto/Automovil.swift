@@ -8,9 +8,9 @@
 import Foundation
 class Automovil {
     var color: String?
-    var numeroLlantas = 4
-    var precio: Int?
-    var añoModelo: Int?
+    var numeroLlantas : String?
+    var precio: String?
+    var añoModelo: String?
     var marca: String?
     
     func encender() -> Bool {
