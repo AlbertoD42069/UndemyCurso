@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 class AutoCreadoViewController: UIViewController {
     
     private let viewNavegacion : AutoCreado = {
@@ -27,9 +29,10 @@ class AutoCreadoViewController: UIViewController {
             viewNavegacion.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
     }
+    
     func setupComp(titleAuto: String){
         let tituloAuto = titleAuto
-        title = "Auto --\(tituloAuto) -- Creado"
+        title = "Auto Creado Exitosamente"
         viewNavegacion.setupAutoView(titleAuto: tituloAuto)
     }
 }

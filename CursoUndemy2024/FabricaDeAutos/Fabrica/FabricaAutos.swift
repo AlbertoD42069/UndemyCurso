@@ -49,7 +49,7 @@ class FabricaAutos: UIView {
     var delegate : FabricaAutosProtocol?
     override init (frame : CGRect) {
         super.init(frame : frame)
-        backgroundColor = .purple
+        //backgroundColor = .purple
         addViews()
         autoLayout()
     }
@@ -82,16 +82,13 @@ class FabricaAutos: UIView {
     @objc func goViewTsuru(){
         let title = btnTsuru.title(for: .normal)
         delegate?.goNextViewController(titleButton: title!)
-        print(title)
     }
     @objc func goViewMazda(){
         let title = btnMazda.title(for: .normal)
         delegate?.goNextViewController(titleButton: title!)
-        print(title)
     }
     @objc func goViewSpark(){
         let title = btnSpark.title(for: .normal)
         delegate?.goNextViewController(titleButton: title!)
-        print(title)
     }
 }
