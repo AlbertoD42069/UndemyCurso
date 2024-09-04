@@ -14,8 +14,8 @@
             filePath = "CursoUndemy2024/Persistencia de datos/PersistenciaDatosUIView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "putAction()"
             landmarkType = "7">
             <Locations>
@@ -49,6 +49,21 @@
                   endingLineNumber = "111"
                   offsetFromSymbolStart = "28">
                </Location>
+               <Location
+                  uuid = "44E45C8D-F19D-4757-84A1-210A5B1A8E87 - ffcadb1cb616f9b4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CursoUndemy2024.PersistenciaDatosUIView.putAction() -&gt; ()"
+                  moduleName = "CursoUndemy2024"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jesusalbertodiazdominguez/Documents/CursoUndemy2024/CursoUndemy2024/Persistencia%20de%20datos/PersistenciaDatosUIView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "108"
+                  endingLineNumber = "108"
+                  offsetFromSymbolStart = "28">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -62,8 +77,8 @@
             filePath = "CursoUndemy2024/Persistencia de datos/PersistenciaDatosUIView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "deleteAction()"
             landmarkType = "7">
             <Locations>
@@ -97,6 +112,21 @@
                   endingLineNumber = "119"
                   offsetFromSymbolStart = "28">
                </Location>
+               <Location
+                  uuid = "CE17FDD6-3A46-4C00-BF37-D90C4D461F85 - c93e0d5fd0a63a6b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CursoUndemy2024.PersistenciaDatosUIView.deleteAction() -&gt; ()"
+                  moduleName = "CursoUndemy2024"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jesusalbertodiazdominguez/Documents/CursoUndemy2024/CursoUndemy2024/Persistencia%20de%20datos/PersistenciaDatosUIView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "28">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -110,10 +140,42 @@
             filePath = "CursoUndemy2024/Persistencia de datos/PersistenciaDatosUIView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "PersistenciaDatosUIView"
             landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4494A6D8-AE71-4B41-8A95-80F67724AD40"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CursoUndemy2024/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "getAction()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "644E11F0-7241-44BD-8B3F-9959284DA05B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CursoUndemy2024/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "getAction()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

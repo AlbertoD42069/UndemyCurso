@@ -31,7 +31,6 @@ class PersistenciaDatosUIView: UIView {
         let btn : UIButton = UIButton(type: .system)
         btn.setTitle("GET", for: .normal)
         btn.addTarget(self, action: #selector(getAction), for: .touchUpInside)
-        btn.tag = 2
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.backgroundColor = .lightGray
         btn.setTitleColor(.black, for: .normal)
@@ -43,7 +42,6 @@ class PersistenciaDatosUIView: UIView {
         let btn : UIButton = UIButton(type: .system)
         btn.setTitle("PUT", for: .normal)
         btn.addTarget(self, action: #selector(putAction), for: .touchUpInside)
-        btn.tag = 2
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.backgroundColor = .lightGray
         btn.setTitleColor(.black, for: .normal)
@@ -55,7 +53,6 @@ class PersistenciaDatosUIView: UIView {
         let btn : UIButton = UIButton(type: .system)
         btn.setTitle("DELETE", for: .normal)
         btn.addTarget(self, action: #selector(deleteAction), for: .touchUpInside)
-        btn.tag = 2
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.backgroundColor = .lightGray
         btn.setTitleColor(.black, for: .normal)

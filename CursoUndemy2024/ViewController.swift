@@ -35,12 +35,18 @@ class ViewController: UIViewController {
     }
     func showAlertView(mensaje: String) {
         let viewAlert = UIAlertController(title: "Datos Persistentes", message: mensaje, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Aceptar", style: .default) { _ in }
+        viewAlert.addAction(okAction)
+
+        present(viewAlert, animated: true, completion: nil)
+
     }
     
 }
 extension ViewController: PersistenciaDatosUIViewProtocol {
     func getAction() {
         if let valuePD = UserDefaults.standard.string(forKey: clavePersitenciaDatos) {
+            
             showAlertView(mensaje: valuePD)
         }else {
             showAlertView(mensaje: "error")
@@ -99,7 +105,7 @@ extension ViewController: PersistenciaDatosUIViewProtocol {
     //MARK: ciclo de vida de aplicacion
 
 //}
-    
+    /*
 extension ViewController: ViewNavegacionProtocol {
     
     func goNextViewController(titleButton: String) {
@@ -108,7 +114,7 @@ extension ViewController: ViewNavegacionProtocol {
         self.navigationController?.present(vc, animated: true)
     }
 }
-    
+   */
     
         //vc.title = "verde"
         //self.navigationController?.pushViewController(vc, animated: true)
