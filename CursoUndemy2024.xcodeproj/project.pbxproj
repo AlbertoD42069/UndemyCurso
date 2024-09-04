@@ -12,6 +12,7 @@
 		B367E3D52C6DC414004370FE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367E3D42C6DC414004370FE /* SearchViewController.swift */; };
 		B367E3D72C704856004370FE /* NavegacionCursoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367E3D62C704856004370FE /* NavegacionCursoViewController.swift */; };
 		B367E3D92C704F52004370FE /* NavegacionDosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367E3D82C704F52004370FE /* NavegacionDosViewController.swift */; };
+		B39A4AFE2C881A8E0043366E /* PersistenciaDatosUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39A4AFD2C881A8E0043366E /* PersistenciaDatosUIView.swift */; };
 		B3B423432C5CA09A00AA0723 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B423422C5CA09A00AA0723 /* AppDelegate.swift */; };
 		B3B423452C5CA09A00AA0723 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B423442C5CA09A00AA0723 /* SceneDelegate.swift */; };
 		B3B423472C5CA09A00AA0723 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B423462C5CA09A00AA0723 /* ViewController.swift */; };
@@ -42,6 +43,7 @@
 		B367E3D42C6DC414004370FE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		B367E3D62C704856004370FE /* NavegacionCursoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavegacionCursoViewController.swift; sourceTree = "<group>"; };
 		B367E3D82C704F52004370FE /* NavegacionDosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavegacionDosViewController.swift; sourceTree = "<group>"; };
+		B39A4AFD2C881A8E0043366E /* PersistenciaDatosUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenciaDatosUIView.swift; sourceTree = "<group>"; };
 		B3B4233F2C5CA09A00AA0723 /* CursoUndemy2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CursoUndemy2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3B423422C5CA09A00AA0723 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3B423442C5CA09A00AA0723 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 			path = cell;
 			sourceTree = "<group>";
 		};
+		B39A4AFC2C881A680043366E /* Persistencia de datos */ = {
+			isa = PBXGroup;
+			children = (
+				B39A4AFD2C881A8E0043366E /* PersistenciaDatosUIView.swift */,
+			);
+			path = "Persistencia de datos";
+			sourceTree = "<group>";
+		};
 		B3B423362C5CA09A00AA0723 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +125,7 @@
 		B3B423412C5CA09A00AA0723 /* CursoUndemy2024 */ = {
 			isa = PBXGroup;
 			children = (
+				B39A4AFC2C881A680043366E /* Persistencia de datos */,
 				B30D540F2C802A3700A0947D /* Collection */,
 				B3FDE4992C7A9ACC008C8599 /* Table */,
 				B3FDE4942C76CC31008C8599 /* Curso */,
@@ -263,6 +274,7 @@
 				B3CFB46A2C6713970020ECCD /* WebViewController.swift in Sources */,
 				B30D54112C802A6500A0947D /* CollectionViewCurso.swift in Sources */,
 				B3FDE4A32C7BD52F008C8599 /* CellCustomTableViewCell.swift in Sources */,
+				B39A4AFE2C881A8E0043366E /* PersistenciaDatosUIView.swift in Sources */,
 				B3B423432C5CA09A00AA0723 /* AppDelegate.swift in Sources */,
 				B3CFB46C2C68122B0020ECCD /* MapViewController.swift in Sources */,
 				B367E3D52C6DC414004370FE /* SearchViewController.swift in Sources */,

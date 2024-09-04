@@ -9,8 +9,11 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private let viewNavegacion : CollectionViewCurso = {
-        let viewCollection: CollectionViewCurso = CollectionViewCurso()
+    private let clavePersitenciaDatos = "clavePD"
+    
+    
+    private let viewNavegacion : PersistenciaDatosUIView = {
+        let viewCollection: PersistenciaDatosUIView = PersistenciaDatosUIView()
         viewCollection.translatesAutoresizingMaskIntoConstraints = false
         return viewCollection
     }()
@@ -18,9 +21,45 @@ class ViewController: UIViewController {
     //la vista a sido cargado en memoria
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(viewNavegacion)
+        title = "Persistencia de datos"
+        viewNavegacion.delegatePersistenciaDatos = self
         
+        NSLayoutConstraint.activate([
+            viewNavegacion.topAnchor.constraint(equalTo: view.topAnchor),
+            viewNavegacion.leftAnchor.constraint(equalTo: view.leftAnchor),
+            viewNavegacion.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            viewNavegacion.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
         
     }
+    func showAlertView(mensaje: String) {
+        let viewAlert = UIAlertController(title: "Datos Persistentes", message: mensaje, preferredStyle: .alert)
+    }
+    
+}
+extension ViewController: PersistenciaDatosUIViewProtocol {
+    func getAction() {
+        if let valuePD = UserDefaults.standard.string(forKey: clavePersitenciaDatos) {
+            showAlertView(mensaje: valuePD)
+        }else {
+            showAlertView(mensaje: "error")
+        }
+    }
+    
+    func putAction() {
+        UserDefaults.standard.setValue("Hola Mundo", forKey: clavePersitenciaDatos)
+        UserDefaults.standard.synchronize()
+        showAlertView(mensaje: "Hemos guardado un valor")
+    }
+    
+    func deleteAction() {
+        UserDefaults.standard.removeObject(forKey: clavePersitenciaDatos)
+        showAlertView(mensaje: "Hemos borrado un valor")
+    }
+    
+}
+    /*
     //la vista a sido cargado en memoria pero aun no se ve
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -41,6 +80,7 @@ class ViewController: UIViewController {
         super.viewDidDisappear(animated)
         
     }
+     */
     
         /* //title = "morado"
         title = "continente americano"
@@ -58,7 +98,7 @@ class ViewController: UIViewController {
      */
     //MARK: ciclo de vida de aplicacion
 
-}
+//}
     
 extension ViewController: ViewNavegacionProtocol {
     
