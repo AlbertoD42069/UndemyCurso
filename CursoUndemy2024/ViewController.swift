@@ -9,8 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private let viewNavegacion : CollectionViewCurso = {
-        let viewCollection: CollectionViewCurso = CollectionViewCurso()
+    
+    
+    private let viewNavegacion : TableViewCursoCoreData = {
+        let viewCollection: TableViewCursoCoreData = TableViewCursoCoreData()
         viewCollection.translatesAutoresizingMaskIntoConstraints = false
         return viewCollection
     }()
@@ -18,8 +20,28 @@ class ViewController: UIViewController {
     //la vista a sido cargado en memoria
     override func viewDidLoad() {
         super.viewDidLoad()
+        let butonLeft = UIBarButtonItem(title: "agregar", style: .plain, target: self, action: #selector((agregarDato)))
+        navigationItem.rightBarButtonItem = butonLeft
+        view.addSubview(viewNavegacion)
+        //viewNavegacion.delegate = self
+
+        NSLayoutConstraint.activate([
+            viewNavegacion.topAnchor.constraint(equalTo: view.topAnchor),
+            viewNavegacion.leftAnchor.constraint(equalTo: view.leftAnchor),
+            viewNavegacion.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            viewNavegacion.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
         
-        
+    }
+    @objc func agregarDato(){
+        print("agregarDatos")
+        /*
+            let viewAlert = UIAlertController(title: "Datos Persistentes", message: "Datos agregados", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Aceptar", style: .default) { _ in }
+            viewAlert.addAction(okAction)
+
+            present(viewAlert, animated: true, completion: nil)
+         */
     }
     //la vista a sido cargado en memoria pero aun no se ve
     override func viewWillAppear(_ animated: Bool) {

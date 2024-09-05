@@ -12,6 +12,10 @@
 		B367E3D52C6DC414004370FE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367E3D42C6DC414004370FE /* SearchViewController.swift */; };
 		B367E3D72C704856004370FE /* NavegacionCursoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367E3D62C704856004370FE /* NavegacionCursoViewController.swift */; };
 		B367E3D92C704F52004370FE /* NavegacionDosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367E3D82C704F52004370FE /* NavegacionDosViewController.swift */; };
+		B39A4B012C8923400043366E /* PaisModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B39A4AFF2C8923400043366E /* PaisModel.xcdatamodeld */; };
+		B39A4B042C89247B0043366E /* Auto+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39A4B022C89247B0043366E /* Auto+CoreDataClass.swift */; };
+		B39A4B052C89247B0043366E /* Auto+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39A4B032C89247B0043366E /* Auto+CoreDataProperties.swift */; };
+		B39A4B092C892EE10043366E /* TableViewCursoCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39A4B082C892EE10043366E /* TableViewCursoCoreData.swift */; };
 		B3B423432C5CA09A00AA0723 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B423422C5CA09A00AA0723 /* AppDelegate.swift */; };
 		B3B423452C5CA09A00AA0723 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B423442C5CA09A00AA0723 /* SceneDelegate.swift */; };
 		B3B423472C5CA09A00AA0723 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B423462C5CA09A00AA0723 /* ViewController.swift */; };
@@ -42,6 +46,10 @@
 		B367E3D42C6DC414004370FE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		B367E3D62C704856004370FE /* NavegacionCursoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavegacionCursoViewController.swift; sourceTree = "<group>"; };
 		B367E3D82C704F52004370FE /* NavegacionDosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavegacionDosViewController.swift; sourceTree = "<group>"; };
+		B39A4B002C8923400043366E /* AutoModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AutoModel.xcdatamodel; sourceTree = "<group>"; };
+		B39A4B022C89247B0043366E /* Auto+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Auto+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B39A4B032C89247B0043366E /* Auto+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Auto+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B39A4B082C892EE10043366E /* TableViewCursoCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCursoCoreData.swift; sourceTree = "<group>"; };
 		B3B4233F2C5CA09A00AA0723 /* CursoUndemy2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CursoUndemy2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3B423422C5CA09A00AA0723 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3B423442C5CA09A00AA0723 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +104,24 @@
 			path = cell;
 			sourceTree = "<group>";
 		};
+		B39A4B062C892E970043366E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B39A4B072C892EBB0043366E /* View */,
+				B39A4B032C89247B0043366E /* Auto+CoreDataProperties.swift */,
+				B39A4B022C89247B0043366E /* Auto+CoreDataClass.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		B39A4B072C892EBB0043366E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B39A4B082C892EE10043366E /* TableViewCursoCoreData.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B3B423362C5CA09A00AA0723 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +141,7 @@
 		B3B423412C5CA09A00AA0723 /* CursoUndemy2024 */ = {
 			isa = PBXGroup;
 			children = (
+				B39A4B062C892E970043366E /* CoreData */,
 				B30D540F2C802A3700A0947D /* Collection */,
 				B3FDE4992C7A9ACC008C8599 /* Table */,
 				B3FDE4942C76CC31008C8599 /* Curso */,
@@ -127,6 +154,7 @@
 				B3B4234B2C5CA09C00AA0723 /* Assets.xcassets */,
 				B3B4234D2C5CA09C00AA0723 /* LaunchScreen.storyboard */,
 				B3B423502C5CA09C00AA0723 /* Info.plist */,
+				B39A4AFF2C8923400043366E /* PaisModel.xcdatamodeld */,
 			);
 			path = CursoUndemy2024;
 			sourceTree = "<group>";
@@ -261,6 +289,7 @@
 				B3B423472C5CA09A00AA0723 /* ViewController.swift in Sources */,
 				B3FDE49B2C7A9AFF008C8599 /* TableViewCurso.swift in Sources */,
 				B3CFB46A2C6713970020ECCD /* WebViewController.swift in Sources */,
+				B39A4B012C8923400043366E /* PaisModel.xcdatamodeld in Sources */,
 				B30D54112C802A6500A0947D /* CollectionViewCurso.swift in Sources */,
 				B3FDE4A32C7BD52F008C8599 /* CellCustomTableViewCell.swift in Sources */,
 				B3B423432C5CA09A00AA0723 /* AppDelegate.swift in Sources */,
@@ -270,6 +299,7 @@
 				B3DE286F2C5DA13500F9BE12 /* ControlsAndViewsViewController.swift in Sources */,
 				B30D54132C802F2D00A0947D /* CursoCollectionViewCell.swift in Sources */,
 				B3FDE4962C76CE12008C8599 /* ViewNavegacion.swift in Sources */,
+				B39A4B042C89247B0043366E /* Auto+CoreDataClass.swift in Sources */,
 				B3CFB4682C65999D0020ECCD /* ScrollViewController.swift in Sources */,
 				B3B423452C5CA09A00AA0723 /* SceneDelegate.swift in Sources */,
 				B367E3D72C704856004370FE /* NavegacionCursoViewController.swift in Sources */,
@@ -277,8 +307,10 @@
 				B3FDE4A12C7BAE26008C8599 /* CellViewCurso.swift in Sources */,
 				B3CFB4642C61ADC90020ECCD /* PalindromoViewController.swift in Sources */,
 				B3FDE4902C758ADE008C8599 /* NavegacionTresViewController.swift in Sources */,
+				B39A4B052C89247B0043366E /* Auto+CoreDataProperties.swift in Sources */,
 				B3DE28712C5DA17A00F9BE12 /* ViewHome.swift in Sources */,
 				B3CFB4662C62E8950020ECCD /* PalindromoViewModel.swift in Sources */,
+				B39A4B092C892EE10043366E /* TableViewCursoCoreData.swift in Sources */,
 				B3DE28732C5DA18F00F9BE12 /* VistasCurso.swift in Sources */,
 				B3CFB46E2C69292F0020ECCD /* PageViewController.swift in Sources */,
 			);
@@ -501,6 +533,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B39A4AFF2C8923400043366E /* PaisModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B39A4B002C8923400043366E /* AutoModel.xcdatamodel */,
+			);
+			currentVersion = B39A4B002C8923400043366E /* AutoModel.xcdatamodel */;
+			path = PaisModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B3B423372C5CA09A00AA0723 /* Project object */;
 }
