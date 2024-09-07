@@ -7,6 +7,11 @@
 
 import Foundation
 import UIKit
+import CoreData
+
+protocol CoreDataTableViewProtocol: AnyObject {
+    func editData(index: Pais)
+}
 
 class CoreDataTableView: UIView {
     
@@ -24,6 +29,9 @@ class CoreDataTableView: UIView {
         view.backgroundColor = .clear
         return view
     }()
+    var context: NSManagedObjectContext?
+    var paisView: [Pais]?
+    var delegateCoredata: CoreDataTableViewProtocol?
     
     override init (frame: CGRect){
         super.init(frame: frame)
@@ -58,7 +66,7 @@ class CoreDataTableView: UIView {
     }
     func recuperarDatos(){
         do {
-            //self.myPais = try context.fetch(Pais.fetchRequest())
+            self.paisView = try context?.fetch(Pais.fetchRequest())
             DispatchQueue.main.async {
                 self.coreDataTable.reloadData()
             }

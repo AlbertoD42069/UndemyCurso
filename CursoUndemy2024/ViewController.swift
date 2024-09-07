@@ -23,15 +23,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.CursoUdemyView.context = self.context
+        self.CursoUdemyView.paisView = self.myPais
         //delegateTableView()
         addcomponets()
         setupViewContainter()
         addbuttonLeft()
-        //recuperarDatos()
-    }
-    func addbuttonLeft(){
-        let butonLeft = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector((addDataCoreData)))
-        navigationItem.rightBarButtonItem = butonLeft
+        self.CursoUdemyView.recuperarDatos()
+        CursoUdemyView.delegateCoredata = self
     }
     
     func addcomponets(){
@@ -45,6 +44,12 @@ class ViewController: UIViewController {
             CursoUdemyView.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
         ])
     }
+    
+    
+    func addbuttonLeft(){
+        let butonLeft = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector((addDataCoreData)))
+        navigationItem.rightBarButtonItem = butonLeft
+    }
     //Agregar datos en coredata
     @objc func addDataCoreData(){
         let alertController = UIAlertController(title: "Agregar un dato", message: nil, preferredStyle: .alert)
@@ -54,11 +59,31 @@ class ViewController: UIViewController {
             let nuevoPais = Pais(context: self.context)
             nuevoPais.nombre = textField.text
             try! self.context.save()
-            //self.recuperarDatos()
+            self.CursoUdemyView.recuperarDatos()
         }
         alertController.addTextField()
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)    }
+}
+extension ViewController: CoreDataTableViewProtocol {
+    func editData(index: Pais) {
+        
+        let alertController = UIAlertController(title: "Editar un dato", message: nil, preferredStyle: .alert)
+        alertController.addTextField()
+        let textField = alertController.textFields![0]
+        textField.text = index.nombre
+
+        let okAction = UIAlertAction(title: "Editar", style: .default) { action in
+            let textField = alertController.textFields![0]
+            index.nombre = textField.text
+            try! self.context.save()
+            self.CursoUdemyView.recuperarDatos()
+        }
+        
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
 }
 
     /*
