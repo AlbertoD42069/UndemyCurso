@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,7 +32,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     
+    //MARK: Core Data
+    lazy var persistentContent: NSPersistentContainer  = {
+        
+        let container  = NSPersistentContainer(name: "PaisAmericano")
+        
+        container.loadPersistentStores { storeDescription, error in
+            if let error = error as NSError?{
+                fatalError("error \(error), - \(error.userInfo)")
+            }
+        }
+        return container
+    }()
 
+    func saveContext(){
+        let context = persistentContent.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+            }
+            catch {
+                let nsError = error as NSError
+                fatalError("error \(nsError), - \(nsError.userInfo)")
+            }
+        }
+    }
 
 }
 

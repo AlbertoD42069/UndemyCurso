@@ -66,6 +66,7 @@ class ViewController: UIViewController {
         let alertController = UIAlertController(title: "Datos para tranferencia\n", message: nil, preferredStyle: .alert)
         //alertController.setValue(attributedMessageText, forKey: "attributedMessage")
         let okAction = UIAlertAction(title: "Aceptar", style: .default) { _ in }
+        alertController.addTextField()
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)    }
 }
