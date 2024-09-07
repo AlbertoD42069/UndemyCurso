@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B30166E52C8D15220098977C /* RestAPIAlamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30166E42C8D15220098977C /* RestAPIAlamofire.swift */; };
+		B30166E72C8D152F0098977C /* RestUrlSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30166E62C8D152F0098977C /* RestUrlSession.swift */; };
 		B30D54112C802A6500A0947D /* CollectionViewCurso.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30D54102C802A6500A0947D /* CollectionViewCurso.swift */; };
 		B30D54132C802F2D00A0947D /* CursoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30D54122C802F2D00A0947D /* CursoCollectionViewCell.swift */; };
 		B367E3D52C6DC414004370FE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367E3D42C6DC414004370FE /* SearchViewController.swift */; };
@@ -37,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B30166E42C8D15220098977C /* RestAPIAlamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPIAlamofire.swift; sourceTree = "<group>"; };
+		B30166E62C8D152F0098977C /* RestUrlSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestUrlSession.swift; sourceTree = "<group>"; };
 		B30D54102C802A6500A0947D /* CollectionViewCurso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCurso.swift; sourceTree = "<group>"; };
 		B30D54122C802F2D00A0947D /* CursoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursoCollectionViewCell.swift; sourceTree = "<group>"; };
 		B367E3D42C6DC414004370FE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +83,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B30166E32C8D115C0098977C /* APIREST */ = {
+			isa = PBXGroup;
+			children = (
+				B30166E42C8D15220098977C /* RestAPIAlamofire.swift */,
+				B30166E62C8D152F0098977C /* RestUrlSession.swift */,
+			);
+			path = APIREST;
+			sourceTree = "<group>";
+		};
 		B30D540F2C802A3700A0947D /* Collection */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +128,7 @@
 		B3B423412C5CA09A00AA0723 /* CursoUndemy2024 */ = {
 			isa = PBXGroup;
 			children = (
+				B30166E32C8D115C0098977C /* APIREST */,
 				B30D540F2C802A3700A0947D /* Collection */,
 				B3FDE4992C7A9ACC008C8599 /* Table */,
 				B3FDE4942C76CC31008C8599 /* Curso */,
@@ -263,11 +277,13 @@
 				B3CFB46A2C6713970020ECCD /* WebViewController.swift in Sources */,
 				B30D54112C802A6500A0947D /* CollectionViewCurso.swift in Sources */,
 				B3FDE4A32C7BD52F008C8599 /* CellCustomTableViewCell.swift in Sources */,
+				B30166E52C8D15220098977C /* RestAPIAlamofire.swift in Sources */,
 				B3B423432C5CA09A00AA0723 /* AppDelegate.swift in Sources */,
 				B3CFB46C2C68122B0020ECCD /* MapViewController.swift in Sources */,
 				B367E3D52C6DC414004370FE /* SearchViewController.swift in Sources */,
 				B367E3D92C704F52004370FE /* NavegacionDosViewController.swift in Sources */,
 				B3DE286F2C5DA13500F9BE12 /* ControlsAndViewsViewController.swift in Sources */,
+				B30166E72C8D152F0098977C /* RestUrlSession.swift in Sources */,
 				B30D54132C802F2D00A0947D /* CursoCollectionViewCell.swift in Sources */,
 				B3FDE4962C76CE12008C8599 /* ViewNavegacion.swift in Sources */,
 				B3CFB4682C65999D0020ECCD /* ScrollViewController.swift in Sources */,

@@ -21,28 +21,29 @@ class ViewController: UIViewController {
         
         
     }
-    //la vista a sido cargado en memoria pero aun no se ve
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
-    // la vista a sido cargado en memoria y ya se ve
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-    }
-    //la vista es lista para desaparecer
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-    }
-    // la vista a desaparecido
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-    }
-    
-        /* //title = "morado"
+        /* 
+         
+         //la vista a sido cargado en memoria pero aun no se ve
+         override func viewWillAppear(_ animated: Bool) {
+             super.viewWillAppear(animated)
+             
+         }
+         // la vista a sido cargado en memoria y ya se ve
+         override func viewDidAppear(_ animated: Bool) {
+             super.viewDidAppear(animated)
+             
+         }
+         //la vista es lista para desaparecer
+         override func viewWillDisappear(_ animated: Bool) {
+             super.viewWillDisappear(animated)
+             
+         }
+         // la vista a desaparecido
+         override func viewDidDisappear(_ animated: Bool) {
+             super.viewDidDisappear(animated)
+             
+         }
+         //title = "morado"
         title = "continente americano"
         //let butonLeft = UIBarButtonItem(title: "verde", style: .plain, target: self, action: #selector((pushNav)))
         //navigationItem.rightBarButtonItem = butonLeft
