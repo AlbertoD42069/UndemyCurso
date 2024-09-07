@@ -9,6 +9,82 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    private let coreDataTable: UITableView = {
+        let table : UITableView = UITableView()
+        table.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        //table.register(CellCustomTableViewCell.self, forCellReuseIdentifier: "cellCursoTable")
+        table.translatesAutoresizingMaskIntoConstraints = false
+        table.backgroundColor = .clear
+
+        return table
+    }()
+    private let CursoUdemyView: UIView = {
+        let view : UIView = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .clear
+        return view
+    }()
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        delegateTableView()
+        addcomponets()
+        setupViewContainter()
+        addbuttonLeft()
+    }
+    func addbuttonLeft(){
+        let butonLeft = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector((addDataCoreData)))
+        navigationItem.rightBarButtonItem = butonLeft
+    }
+    func delegateTableView(){
+        coreDataTable.dataSource = self
+        //coreDataTable.delegate = self
+    }
+    func addcomponets(){
+        view.addSubview(CursoUdemyView)
+        CursoUdemyView.addSubview(coreDataTable)
+    }
+    func setupViewContainter(){
+        NSLayoutConstraint.activate([
+            CursoUdemyView.safeAreaLayoutGuide.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            CursoUdemyView.safeAreaLayoutGuide.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            CursoUdemyView.safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            CursoUdemyView.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
+            coreDataTable.topAnchor.constraint(equalTo: CursoUdemyView.topAnchor),
+            coreDataTable.leadingAnchor.constraint(equalTo: CursoUdemyView.leadingAnchor),
+            coreDataTable.trailingAnchor.constraint(equalTo: CursoUdemyView.trailingAnchor),
+            coreDataTable.bottomAnchor.constraint(equalTo: CursoUdemyView.bottomAnchor),
+        ])
+    }
+    
+    @objc func addDataCoreData(){
+        showAlertView()
+    }
+    func showAlertView(){
+        let alertController = UIAlertController(title: "Datos para tranferencia\n", message: nil, preferredStyle: .alert)
+        //alertController.setValue(attributedMessageText, forKey: "attributedMessage")
+        let okAction = UIAlertAction(title: "Aceptar", style: .default) { _ in }
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)    }
+}
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        
+        cell.textLabel?.text = "hola"
+        
+        return cell
+    }
+    
+    
+}
+    /*
     private let viewNavegacion : CollectionViewCurso = {
         let viewCollection: CollectionViewCurso = CollectionViewCurso()
         viewCollection.translatesAutoresizingMaskIntoConstraints = false
@@ -59,7 +135,8 @@ class ViewController: UIViewController {
     //MARK: ciclo de vida de aplicacion
 
 }
-    
+ */
+    /*
 extension ViewController: ViewNavegacionProtocol {
     
     func goNextViewController(titleButton: String) {
@@ -68,7 +145,7 @@ extension ViewController: ViewNavegacionProtocol {
         self.navigationController?.present(vc, animated: true)
     }
 }
-    
+    */
     
         //vc.title = "verde"
         //self.navigationController?.pushViewController(vc, animated: true)
@@ -185,3 +262,4 @@ extension ViewController: ViewNavegacionProtocol {
  }
  */
  */
+
