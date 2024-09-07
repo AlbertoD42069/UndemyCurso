@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    
     private let viewNavegacion : CollectionViewCurso = {
         let viewCollection: CollectionViewCurso = CollectionViewCurso()
         viewCollection.translatesAutoresizingMaskIntoConstraints = false

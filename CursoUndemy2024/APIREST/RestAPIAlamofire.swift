@@ -6,7 +6,10 @@
 //
 
 import Foundation
+import Alamofire
+
 
 class RestAPIAlamofire {
     
+    static let shared = RestAPIAlamofire()
 }
