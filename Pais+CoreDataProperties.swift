@@ -16,7 +16,6 @@ extension Pais {
         return NSFetchRequest<Pais>(entityName: "Pais")
     }
 
-    @NSManaged public var id: Int64
     @NSManaged public var nombre: String?
 
 }

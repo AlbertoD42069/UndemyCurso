@@ -25,6 +25,8 @@ class ViewController: UIViewController {
         return view
     }()
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContent.viewContext
+    private var myPais: [Pais]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,7 @@ class ViewController: UIViewController {
         addcomponets()
         setupViewContainter()
         addbuttonLeft()
+        recuperarDatos()
     }
     func addbuttonLeft(){
         let butonLeft = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector((addDataCoreData)))
@@ -58,27 +61,51 @@ class ViewController: UIViewController {
             coreDataTable.bottomAnchor.constraint(equalTo: CursoUdemyView.bottomAnchor),
         ])
     }
+    func recuperarDatos(){
+        do {
+            self.myPais = try context.fetch(Pais.fetchRequest())
+            DispatchQueue.main.async {
+                self.coreDataTable.reloadData()
+            }
+        }catch {
+            print("Error de recuperacion de datos")
+        }
+    }
     
     @objc func addDataCoreData(){
-        showAlertView()
-    }
-    func showAlertView(){
-        let alertController = UIAlertController(title: "Datos para tranferencia\n", message: nil, preferredStyle: .alert)
-        //alertController.setValue(attributedMessageText, forKey: "attributedMessage")
-        let okAction = UIAlertAction(title: "Aceptar", style: .default) { _ in }
+        let alertController = UIAlertController(title: "Agregar un dato", message: nil, preferredStyle: .alert)
+        
+        
+        
+        
+        
+        let okAction = UIAlertAction(title: "Añadir", style: .default) { action in
+            let textField = alertController.textFields![0]
+            
+            let nuevoPais = Pais(context: self.context)
+            nuevoPais.nombre = textField.text
+            
+            try! self.context.save()
+            self.recuperarDatos()
+            
+        }
+        
+    
+        
         alertController.addTextField()
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)    }
+    
 }
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return myPais!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         
-        cell.textLabel?.text = "hola"
+        cell.textLabel?.text = myPais![indexPath.row].nombre
         
         return cell
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B30166DD2C8CEE7E0098977C /* Pais+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30166DC2C8CEE7E0098977C /* Pais+CoreDataProperties.swift */; };
 		B30D54112C802A6500A0947D /* CollectionViewCurso.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30D54102C802A6500A0947D /* CollectionViewCurso.swift */; };
 		B30D54132C802F2D00A0947D /* CursoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30D54122C802F2D00A0947D /* CursoCollectionViewCell.swift */; };
 		B367E3D52C6DC414004370FE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367E3D42C6DC414004370FE /* SearchViewController.swift */; };
@@ -26,7 +27,6 @@
 		B3CFB46E2C69292F0020ECCD /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CFB46D2C69292F0020ECCD /* PageViewController.swift */; };
 		B3DD42122C8C0952000E53DB /* PaisAmericano.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3DD42102C8C0952000E53DB /* PaisAmericano.xcdatamodeld */; };
 		B3DD42152C8CD82A000E53DB /* Pais+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD42132C8CD82A000E53DB /* Pais+CoreDataClass.swift */; };
-		B3DD42162C8CD82A000E53DB /* Pais+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DD42142C8CD82A000E53DB /* Pais+CoreDataProperties.swift */; };
 		B3DE286D2C5D9D6B00F9BE12 /* VistasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE286C2C5D9D6B00F9BE12 /* VistasViewController.swift */; };
 		B3DE286F2C5DA13500F9BE12 /* ControlsAndViewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE286E2C5DA13500F9BE12 /* ControlsAndViewsViewController.swift */; };
 		B3DE28712C5DA17A00F9BE12 /* ViewHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DE28702C5DA17A00F9BE12 /* ViewHome.swift */; };
@@ -40,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B30166DC2C8CEE7E0098977C /* Pais+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pais+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B30D54102C802A6500A0947D /* CollectionViewCurso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCurso.swift; sourceTree = "<group>"; };
 		B30D54122C802F2D00A0947D /* CursoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursoCollectionViewCell.swift; sourceTree = "<group>"; };
 		B367E3D42C6DC414004370FE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		B3CFB46D2C69292F0020ECCD /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		B3DD42112C8C0952000E53DB /* PaisAmericano.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PaisAmericano.xcdatamodel; sourceTree = "<group>"; };
 		B3DD42132C8CD82A000E53DB /* Pais+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pais+CoreDataClass.swift"; sourceTree = "<group>"; };
-		B3DD42142C8CD82A000E53DB /* Pais+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pais+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B3DE286C2C5D9D6B00F9BE12 /* VistasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistasViewController.swift; sourceTree = "<group>"; };
 		B3DE286E2C5DA13500F9BE12 /* ControlsAndViewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlsAndViewsViewController.swift; sourceTree = "<group>"; };
 		B3DE28702C5DA17A00F9BE12 /* ViewHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHome.swift; sourceTree = "<group>"; };
@@ -105,8 +105,8 @@
 		B3B423362C5CA09A00AA0723 = {
 			isa = PBXGroup;
 			children = (
+				B30166DC2C8CEE7E0098977C /* Pais+CoreDataProperties.swift */,
 				B3DD42132C8CD82A000E53DB /* Pais+CoreDataClass.swift */,
-				B3DD42142C8CD82A000E53DB /* Pais+CoreDataProperties.swift */,
 				B3B423412C5CA09A00AA0723 /* CursoUndemy2024 */,
 				B3B423402C5CA09A00AA0723 /* Products */,
 			);
@@ -293,7 +293,7 @@
 				B367E3D72C704856004370FE /* NavegacionCursoViewController.swift in Sources */,
 				B3DE286D2C5D9D6B00F9BE12 /* VistasViewController.swift in Sources */,
 				B3FDE4A12C7BAE26008C8599 /* CellViewCurso.swift in Sources */,
-				B3DD42162C8CD82A000E53DB /* Pais+CoreDataProperties.swift in Sources */,
+				B30166DD2C8CEE7E0098977C /* Pais+CoreDataProperties.swift in Sources */,
 				B3CFB4642C61ADC90020ECCD /* PalindromoViewController.swift in Sources */,
 				B3FDE4902C758ADE008C8599 /* NavegacionTresViewController.swift in Sources */,
 				B3DE28712C5DA17A00F9BE12 /* ViewHome.swift in Sources */,
