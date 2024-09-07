@@ -9,17 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private let coreDataTable: UITableView = {
-        let table : UITableView = UITableView()
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
-        //table.register(CellCustomTableViewCell.self, forCellReuseIdentifier: "cellCursoTable")
-        table.translatesAutoresizingMaskIntoConstraints = false
-        table.backgroundColor = .clear
-
-        return table
-    }()
-    private let CursoUdemyView: UIView = {
-        let view : UIView = UIView()
+    
+    private let CursoUdemyView: CoreDataTableView = {
+        let view : CoreDataTableView = CoreDataTableView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .clear
         return view
@@ -30,23 +22,20 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        delegateTableView()
+        
+        //delegateTableView()
         addcomponets()
         setupViewContainter()
         addbuttonLeft()
-        recuperarDatos()
+        //recuperarDatos()
     }
     func addbuttonLeft(){
         let butonLeft = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector((addDataCoreData)))
         navigationItem.rightBarButtonItem = butonLeft
     }
-    func delegateTableView(){
-        coreDataTable.dataSource = self
-        coreDataTable.delegate = self
-    }
+    
     func addcomponets(){
         view.addSubview(CursoUdemyView)
-        CursoUdemyView.addSubview(coreDataTable)
     }
     func setupViewContainter(){
         NSLayoutConstraint.activate([
@@ -54,24 +43,8 @@ class ViewController: UIViewController {
             CursoUdemyView.safeAreaLayoutGuide.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             CursoUdemyView.safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             CursoUdemyView.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            
-            coreDataTable.topAnchor.constraint(equalTo: CursoUdemyView.topAnchor),
-            coreDataTable.leadingAnchor.constraint(equalTo: CursoUdemyView.leadingAnchor),
-            coreDataTable.trailingAnchor.constraint(equalTo: CursoUdemyView.trailingAnchor),
-            coreDataTable.bottomAnchor.constraint(equalTo: CursoUdemyView.bottomAnchor),
         ])
     }
-    func recuperarDatos(){
-        do {
-            self.myPais = try context.fetch(Pais.fetchRequest())
-            DispatchQueue.main.async {
-                self.coreDataTable.reloadData()
-            }
-        }catch {
-            print("Error de recuperacion de datos")
-        }
-    }
-    
     //Agregar datos en coredata
     @objc func addDataCoreData(){
         let alertController = UIAlertController(title: "Agregar un dato", message: nil, preferredStyle: .alert)
@@ -81,65 +54,13 @@ class ViewController: UIViewController {
             let nuevoPais = Pais(context: self.context)
             nuevoPais.nombre = textField.text
             try! self.context.save()
-            self.recuperarDatos()
+            //self.recuperarDatos()
         }
         alertController.addTextField()
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)    }
-    
 }
-extension ViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myPais!.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        
-        cell.textLabel?.text = myPais![indexPath.row].nombre
-        
-        return cell
-    }
-    
-    
-}
-extension ViewController: UITableViewDelegate {
-    
-    //modificar datos de core data
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let editarPais = myPais![indexPath.row]
-        
-        let alertController = UIAlertController(title: "Editar un dato", message: nil, preferredStyle: .alert)
-       
-        alertController.addTextField()
-        let textField = alertController.textFields![0]
-        textField.text = editarPais.nombre
-        
-        
-        let okAction = UIAlertAction(title: "Editar", style: .default) { action in
-            let textField = alertController.textFields![0]
-            editarPais.nombre = textField.text
-            try! self.context.save()
-            self.recuperarDatos()
-        }
-        
-        alertController.addAction(okAction)
-        present(alertController, animated: true, completion: nil)
-        
-    }
-    
-    //Eliminar Datos de tabla con dezlisar el dedo de coredata
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let eliminarPais = UIContextualAction(style: .destructive, title: "Eliminar") { action, view, completionHandler in
-            let paisEliminado = self.myPais![indexPath.row]
-            self.context.delete(paisEliminado)
-            try! self.context.save()
-            self.recuperarDatos()
-        }
-        return UISwipeActionsConfiguration(actions: [eliminarPais])
-    }
-    
-}
+
     /*
     private let viewNavegacion : CollectionViewCurso = {
         let viewCollection: CollectionViewCurso = CollectionViewCurso()

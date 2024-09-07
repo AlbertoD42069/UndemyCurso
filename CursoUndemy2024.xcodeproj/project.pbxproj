@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B30166DD2C8CEE7E0098977C /* Pais+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30166DC2C8CEE7E0098977C /* Pais+CoreDataProperties.swift */; };
+		B30166E02C8D05090098977C /* CoreDataTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30166DF2C8D05090098977C /* CoreDataTableView.swift */; };
+		B30166E22C8D06F50098977C /* ExtensionCoreDataTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30166E12C8D06F50098977C /* ExtensionCoreDataTableView.swift */; };
 		B30D54112C802A6500A0947D /* CollectionViewCurso.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30D54102C802A6500A0947D /* CollectionViewCurso.swift */; };
 		B30D54132C802F2D00A0947D /* CursoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30D54122C802F2D00A0947D /* CursoCollectionViewCell.swift */; };
 		B367E3D52C6DC414004370FE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B367E3D42C6DC414004370FE /* SearchViewController.swift */; };
@@ -41,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		B30166DC2C8CEE7E0098977C /* Pais+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pais+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B30166DF2C8D05090098977C /* CoreDataTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTableView.swift; sourceTree = "<group>"; };
+		B30166E12C8D06F50098977C /* ExtensionCoreDataTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionCoreDataTableView.swift; sourceTree = "<group>"; };
 		B30D54102C802A6500A0947D /* CollectionViewCurso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCurso.swift; sourceTree = "<group>"; };
 		B30D54122C802F2D00A0947D /* CursoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursoCollectionViewCell.swift; sourceTree = "<group>"; };
 		B367E3D42C6DC414004370FE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +89,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B30166DE2C8D04E50098977C /* TableViewCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B30166DF2C8D05090098977C /* CoreDataTableView.swift */,
+				B30166E12C8D06F50098977C /* ExtensionCoreDataTableView.swift */,
+			);
+			path = TableViewCoreData;
+			sourceTree = "<group>";
+		};
 		B30D540F2C802A3700A0947D /* Collection */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +165,7 @@
 		B3DD420F2C8C0935000E53DB /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				B30166DE2C8D04E50098977C /* TableViewCoreData */,
 				B3DD42102C8C0952000E53DB /* PaisAmericano.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -297,7 +311,9 @@
 				B3CFB4642C61ADC90020ECCD /* PalindromoViewController.swift in Sources */,
 				B3FDE4902C758ADE008C8599 /* NavegacionTresViewController.swift in Sources */,
 				B3DE28712C5DA17A00F9BE12 /* ViewHome.swift in Sources */,
+				B30166E22C8D06F50098977C /* ExtensionCoreDataTableView.swift in Sources */,
 				B3CFB4662C62E8950020ECCD /* PalindromoViewModel.swift in Sources */,
+				B30166E02C8D05090098977C /* CoreDataTableView.swift in Sources */,
 				B3DE28732C5DA18F00F9BE12 /* VistasCurso.swift in Sources */,
 				B3CFB46E2C69292F0020ECCD /* PageViewController.swift in Sources */,
 				B3DD42122C8C0952000E53DB /* PaisAmericano.xcdatamodeld in Sources */,
