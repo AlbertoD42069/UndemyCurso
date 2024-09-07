@@ -23,16 +23,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.CursoUdemyView.context = self.context
-        self.CursoUdemyView.paisView = self.myPais
-        //delegateTableView()
         addcomponets()
         setupViewContainter()
         addbuttonLeft()
+        setupCoreData()
+        
+    }
+    func setupCoreData(){
+        
+        self.CursoUdemyView.context = self.context
+        self.CursoUdemyView.paisView = self.myPais
         self.CursoUdemyView.recuperarDatos()
         CursoUdemyView.delegateCoredata = self
     }
-    
     func addcomponets(){
         view.addSubview(CursoUdemyView)
     }
