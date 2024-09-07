@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     }
     func delegateTableView(){
         coreDataTable.dataSource = self
-        //coreDataTable.delegate = self
+        coreDataTable.delegate = self
     }
     func addcomponets(){
         view.addSubview(CursoUdemyView)
@@ -72,26 +72,17 @@ class ViewController: UIViewController {
         }
     }
     
+    //Agregar datos en coredata
     @objc func addDataCoreData(){
         let alertController = UIAlertController(title: "Agregar un dato", message: nil, preferredStyle: .alert)
         
-        
-        
-        
-        
         let okAction = UIAlertAction(title: "Añadir", style: .default) { action in
             let textField = alertController.textFields![0]
-            
             let nuevoPais = Pais(context: self.context)
             nuevoPais.nombre = textField.text
-            
             try! self.context.save()
             self.recuperarDatos()
-            
         }
-        
-    
-        
         alertController.addTextField()
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)    }
@@ -110,6 +101,43 @@ extension ViewController: UITableViewDataSource {
         return cell
     }
     
+    
+}
+extension ViewController: UITableViewDelegate {
+    
+    //modificar datos de core data
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let editarPais = myPais![indexPath.row]
+        
+        let alertController = UIAlertController(title: "Editar un dato", message: nil, preferredStyle: .alert)
+       
+        alertController.addTextField()
+        let textField = alertController.textFields![0]
+        textField.text = editarPais.nombre
+        
+        
+        let okAction = UIAlertAction(title: "Editar", style: .default) { action in
+            let textField = alertController.textFields![0]
+            editarPais.nombre = textField.text
+            try! self.context.save()
+            self.recuperarDatos()
+        }
+        
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    //Eliminar Datos de tabla con dezlisar el dedo de coredata
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let eliminarPais = UIContextualAction(style: .destructive, title: "Eliminar") { action, view, completionHandler in
+            let paisEliminado = self.myPais![indexPath.row]
+            self.context.delete(paisEliminado)
+            try! self.context.save()
+            self.recuperarDatos()
+        }
+        return UISwipeActionsConfiguration(actions: [eliminarPais])
+    }
     
 }
     /*
