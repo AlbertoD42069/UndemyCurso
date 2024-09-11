@@ -10,45 +10,11 @@ import UIKit
 class ViewController: UIViewController {
     
     
-    private let viewAPIREST : UIView = {
-        let view: UIView = UIView()
+    private let viewAPIREST : ViewApiREST = {
+        let view: ViewApiREST = ViewApiREST()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .red
         return view
-    }()
-    
-    var apiRESTBtn: UIButton = {
-       let btn : UIButton = UIButton(type: .system)
-       btn.setTitle("Negro", for: .normal)
-       btn.addTarget(self, action: #selector(getDataPeliculas), for: .touchUpInside)
-       btn.translatesAutoresizingMaskIntoConstraints = false
-       btn.backgroundColor = .lightGray
-       btn.layer.borderWidth = 1
-       btn.layer.cornerRadius = 8
-       return btn
-   }()
-    private let titlePeliculaLabels: UILabel = {
-        let label : UILabel = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .left
-        label.text = ""
-        label.numberOfLines = 0
-        return label
-    }()
-    private let titleAdultLabels: UILabel = {
-        let label : UILabel = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .left
-        label.text = ""
-        label.numberOfLines = 0
-        return label
-    }()
-    private let titleIdiomaLabels: UILabel = {
-        let label : UILabel = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .left
-        label.text = ""
-        return label
     }()
     
     private let progressIndicador: UIActivityIndicatorView = {
@@ -57,24 +23,25 @@ class ViewController: UIViewController {
         return indicator
     }()
     
-    
+    private var restoAlamoFire: Results?
+
     //la vista a sido cargado en memoria
     override func viewDidLoad() {
         super.viewDidLoad()
         addComponentes()
         setupAutoLayout()
-        
-        progressIndicador.hidesWhenStopped = true
-        progressIndicador.stopAnimating()
+        restoAlamoFire = viewAPIREST.restoAlamoFire
+        //progressIndicador.hidesWhenStopped = true
+        //progressIndicador.stopAnimating()
         
     }
     func addComponentes(){
         view.addSubview(viewAPIREST)
-        viewAPIREST.addSubview(apiRESTBtn)
-        viewAPIREST.addSubview(titleAdultLabels)
-        viewAPIREST.addSubview(titleIdiomaLabels)
-        viewAPIREST.addSubview(titlePeliculaLabels)
-        viewAPIREST.addSubview(progressIndicador)
+        //viewAPIREST.addSubview(apiRESTBtn)
+        //viewAPIREST.addSubview(titleAdultLabels)
+        //viewAPIREST.addSubview(titleIdiomaLabels)
+        //viewAPIREST.addSubview(titlePeliculaLabels)
+        //viewAPIREST.addSubview(progressIndicador)
     }
     func setupAutoLayout(){
         NSLayoutConstraint.activate([
@@ -83,43 +50,43 @@ class ViewController: UIViewController {
             viewAPIREST.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             viewAPIREST.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             
-            progressIndicador.centerXAnchor.constraint(equalTo: viewAPIREST.centerXAnchor),
-            progressIndicador.centerYAnchor.constraint(equalTo: viewAPIREST.centerYAnchor),
+            //progressIndicador.centerXAnchor.constraint(equalTo: viewAPIREST.centerXAnchor),
+            //progressIndicador.centerYAnchor.constraint(equalTo: viewAPIREST.centerYAnchor),
             
-            apiRESTBtn.topAnchor.constraint(equalTo: viewAPIREST.topAnchor, constant: 10),
-            apiRESTBtn.centerXAnchor.constraint(equalTo: viewAPIREST.centerXAnchor),
-            apiRESTBtn.widthAnchor.constraint(equalToConstant: 150),
-            
-            titlePeliculaLabels.topAnchor.constraint(equalTo: apiRESTBtn.bottomAnchor, constant: 20),
-            titlePeliculaLabels.leadingAnchor.constraint(equalTo: viewAPIREST.leadingAnchor, constant: 10),
-            titlePeliculaLabels.trailingAnchor.constraint(equalTo: viewAPIREST.trailingAnchor, constant: -10),
-
-            titleAdultLabels.topAnchor.constraint(equalTo: titlePeliculaLabels.bottomAnchor, constant: 20),
-            titleAdultLabels.leadingAnchor.constraint(equalTo: viewAPIREST.leadingAnchor, constant: 20),
-            titleAdultLabels.trailingAnchor.constraint(equalTo: viewAPIREST.trailingAnchor, constant: -20),
-
-            titleIdiomaLabels.topAnchor.constraint(equalTo: titleAdultLabels.bottomAnchor, constant: 20),
-            titleIdiomaLabels.leadingAnchor.constraint(equalTo: viewAPIREST.leadingAnchor, constant: 20),
-            titleIdiomaLabels.trailingAnchor.constraint(equalTo: viewAPIREST.trailingAnchor, constant: -20),
+            //apiRESTBtn.topAnchor.constraint(equalTo: viewAPIREST.topAnchor, constant: 10),
+            //apiRESTBtn.centerXAnchor.constraint(equalTo: viewAPIREST.centerXAnchor),
+            //apiRESTBtn.widthAnchor.constraint(equalToConstant: 150),
+            //
+            //titlePeliculaLabels.topAnchor.constraint(equalTo: apiRESTBtn.bottomAnchor, constant: 20),
+            //titlePeliculaLabels.leadingAnchor.constraint(equalTo: viewAPIREST.leadingAnchor, constant: 10),
+            //titlePeliculaLabels.trailingAnchor.constraint(equalTo: viewAPIREST.trailingAnchor, constant: -10),
+//
+            //titleAdultLabels.topAnchor.constraint(equalTo: titlePeliculaLabels.bottomAnchor, constant: 20),
+            //titleAdultLabels.leadingAnchor.constraint(equalTo: viewAPIREST.leadingAnchor, constant: 20),
+            //titleAdultLabels.trailingAnchor.constraint(equalTo: viewAPIREST.trailingAnchor, constant: -20),
+//
+            //titleIdiomaLabels.topAnchor.constraint(equalTo: titleAdultLabels.bottomAnchor, constant: 20),
+            //titleIdiomaLabels.leadingAnchor.constraint(equalTo: viewAPIREST.leadingAnchor, constant: 20),
+            //titleIdiomaLabels.trailingAnchor.constraint(equalTo: viewAPIREST.trailingAnchor, constant: -20),
             
         ])
     }
     
-    @objc func getDataPeliculas(){
-        progressIndicador.startAnimating()
-        
-        RestAPIAlamofire.shared.getPopular(urlPopularPelicula: Urls.urlPopular) { pelicula in
-            self.progressIndicador.stopAnimating()
-            
-            self.titlePeliculaLabels.text = pelicula[1].title
-            self.titleIdiomaLabels.text = pelicula[1].original_language
-            self.titleAdultLabels.text = pelicula[1].overview
-        } failed: { error in
-            self.progressIndicador.stopAnimating()
-            self.titlePeliculaLabels.text = error.debugDescription
-            print(error.debugDescription)
-        }
-    }
+   // @objc func getDataPeliculas(){
+   //     progressIndicador.startAnimating()
+   //
+   //     RestAPIAlamofire.shared.getPopular(urlPopularPelicula: Urls.urlPopular) { pelicula in
+   //         self.progressIndicador.stopAnimating()
+   //
+   //         self.titlePeliculaLabels.text = pelicula[1].title
+   //         self.titleIdiomaLabels.text = pelicula[1].original_language
+   //         self.titleAdultLabels.text = pelicula[1].overview
+   //     } failed: { error in
+   //         self.progressIndicador.stopAnimating()
+   //         self.titlePeliculaLabels.text = error.debugDescription
+   //         print(error.debugDescription)
+   //     }
+   // }
         
         
 

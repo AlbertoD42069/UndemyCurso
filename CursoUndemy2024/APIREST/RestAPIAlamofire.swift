@@ -25,6 +25,11 @@ class RestAPIAlamofire {
                 //reponse.value?.results.count {
                 success(pelicula)
                 print(pelicula)
+                
+                var mapPelicula = pelicula.map { response in
+                    DataPeliculaDetalles(adult: response.adult, id: response.id, original_language: response.original_language, original_title: response.original_title, overview: response.overview, popularity: response.popularity, release_date: response.release_date, title: response.title)
+                }
+                print("-----------------\(mapPelicula)-----------------")
             }else {
                 failed(reponse.error)
             }
