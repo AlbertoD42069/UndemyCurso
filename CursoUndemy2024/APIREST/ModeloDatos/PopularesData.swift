@@ -7,19 +7,19 @@
 
 import Foundation
 
-struct Populares : Decodable{
-    let page: Int?
-    let results: ResultPopulares?
+struct Populares : Decodable {
+    //let page: Int?
+    let results: [Results]?
 }
-struct ResultPopulares : Decodable {
+struct Results : Decodable {
     let adult: Bool?
     let backdrop_path: String?
-    let genre_ids: GenreIds?
+    //let genre_ids: GenreIds?
     let id: Int?
     let original_language: String?
     let original_title: String?
     let overview: String?
-    let popularity: Int?
+    let popularity: Double?
     let poster_path: String?
     let release_date: String?
     let title: String?

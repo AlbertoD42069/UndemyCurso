@@ -8,15 +8,26 @@
 import Foundation
 import Alamofire
 
+class Urls {
+    static let urlPopular  = "https://api.themoviedb.org/3/movie/popular?api_key=c89f997b9f805d783c81fc1e854ed7d1"
+
+}
+
 class RestAPIAlamofire {
     
     static let shared = RestAPIAlamofire()
     
-    let urlPopular  = "https://api.themoviedb.org/3/movie/popular?api_key=c89f997b9f805d783c81fc1e854ed7d1"
+    
     let statusOK = 200...299
-    func getPopular(id: Int){
-        AF.request(urlPopular, method: .get).validate(statusCode: statusOK).responseDecodable(of: ResultPopulares.self){ reponse in
-            
+    func getPopular(urlPopularPelicula: String, success: @escaping (_ pelicula: [Results]) ->(), failed: @escaping (_ error: Error?) ->() ){
+        AF.request(urlPopularPelicula, method: .get).validate(statusCode: statusOK).responseDecodable(of: Populares.self){ reponse in
+            if let pelicula = reponse.value?.results {
+                //reponse.value?.results.count {
+                success(pelicula)
+                print(pelicula)
+            }else {
+                failed(reponse.error)
+            }
         }
         
     }
