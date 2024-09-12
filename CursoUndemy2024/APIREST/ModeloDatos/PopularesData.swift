@@ -48,3 +48,11 @@ struct DataPeliculaDetalles {
     //let vote_average: Double?
     //let vote_count: Int?
 }
+
+struct NewPelicula: Encodable {
+    let adult: Bool
+    let id: Int
+    let original_title: String
+    let overview: String
+
+}
