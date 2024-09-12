@@ -30,7 +30,7 @@ class ViewApiREST: UIView {
         let label : UILabel = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
-        label.text = "0"
+        //label.text = "0"
         label.numberOfLines = 0
         return label
     }()
@@ -50,8 +50,6 @@ class ViewApiREST: UIView {
         return label
     }()
     
-    let peliculaRest = RestAPIAlamofire.shared
-    var restoAlamoFire: Results?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -71,6 +69,17 @@ class ViewApiREST: UIView {
     }
     func setupSetAutoLayout(){
         NSLayoutConstraint.activate([
+            
+            viewApiRest.topAnchor.constraint(equalTo: topAnchor),
+            viewApiRest.leadingAnchor.constraint(equalTo: leadingAnchor),
+            viewApiRest.trailingAnchor.constraint(equalTo: trailingAnchor),
+            viewApiRest.bottomAnchor.constraint(equalTo: bottomAnchor),
+
+            
+            apiRESTBtn.centerXAnchor.constraint(equalTo: viewApiRest.centerXAnchor),
+            apiRESTBtn.widthAnchor.constraint(equalToConstant: 100),
+            apiRESTBtn.topAnchor.constraint(equalTo: viewApiRest.topAnchor, constant: 10),
+            
             titlePeliculaLabels.topAnchor.constraint(equalTo: apiRESTBtn.bottomAnchor, constant: 20),
             titlePeliculaLabels.leadingAnchor.constraint(equalTo: viewApiRest.leadingAnchor, constant: 20),
             titlePeliculaLabels.trailingAnchor.constraint(equalTo: viewApiRest.trailingAnchor, constant: -10),
@@ -87,8 +96,8 @@ class ViewApiREST: UIView {
     
     @objc func getDataPeliculas() {
         print("-----")
-        peliculaRest.getPopular(urlPopularPelicula: Urls.urlPopular) { pelicula in
-            self.titlePeliculaLabels.text = self.restoAlamoFire?.title
+        RestAPIAlamofire.shared.getPopular(urlPopularPelicula: Urls.urlPopular) { pelicula in
+            self.titlePeliculaLabels.text = pelicula[0].title
         } failed: { error in
             
             self.titlePeliculaLabels.text = error.debugDescription

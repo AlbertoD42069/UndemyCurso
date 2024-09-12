@@ -7,37 +7,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9F9F8E51-86EE-4D37-B801-ED8AEA152ED3"
+            uuid = "06E5339F-B1DC-4F44-943C-51F747B8B693"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CursoUndemy2024/WebViewController.swift"
+            filePath = "CursoUndemy2024/APIREST/ViewAPIREST/ViewApiREST.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "setupViewWeb()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "14A23D76-99EC-4607-806F-F80F9ECF1827"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CursoUndemy2024/Navegacion/ViewNavegacion.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-<<<<<<< HEAD
-            endingLineNumber = "84"
-            landmarkName = "goViewNegro()"
-            landmarkType = "7">
-=======
-            endingLineNumber = "84">
->>>>>>> tableViewControlerCurso
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "ViewApiREST"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "06E5339F-B1DC-4F44-943C-51F747B8B693 - cf33c4592e2ae808"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CursoUndemy2024.ViewApiREST.getDataPeliculas() -&gt; ()"
+                  moduleName = "CursoUndemy2024"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jesusalbertodiazdominguez/Documents/CursoUndemy2024/CursoUndemy2024/APIREST/ViewAPIREST/ViewApiREST.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "06E5339F-B1DC-4F44-943C-51F747B8B693 - cf33c4592e2ae829"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CursoUndemy2024.ViewApiREST.getDataPeliculas() -&gt; ()"
+                  moduleName = "CursoUndemy2024"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jesusalbertodiazdominguez/Documents/CursoUndemy2024/CursoUndemy2024/APIREST/ViewAPIREST/ViewApiREST.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

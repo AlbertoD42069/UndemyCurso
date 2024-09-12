@@ -23,14 +23,12 @@ class ViewController: UIViewController {
         return indicator
     }()
     
-    private var restoAlamoFire: Results?
 
     //la vista a sido cargado en memoria
     override func viewDidLoad() {
         super.viewDidLoad()
         addComponentes()
         setupAutoLayout()
-        restoAlamoFire = viewAPIREST.restoAlamoFire
         //progressIndicador.hidesWhenStopped = true
         //progressIndicador.stopAnimating()
         
@@ -131,7 +129,7 @@ class ViewController: UIViewController {
     //MARK: ciclo de vida de aplicacion
 
 }
-    
+    /*
 extension ViewController: ViewNavegacionProtocol {
     
     func goNextViewController(titleButton: String) {
@@ -140,7 +138,7 @@ extension ViewController: ViewNavegacionProtocol {
         self.navigationController?.present(vc, animated: true)
     }
 }
-    
+   */
     
         //vc.title = "verde"
         //self.navigationController?.pushViewController(vc, animated: true)
